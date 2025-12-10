@@ -23,9 +23,9 @@ export function Header() {
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 pointer-events-none">
       <div className="w-full mx-auto flex items-center justify-between px-7 py-3">
-        <Link href="/" className="relative w-[83px] h-14">
+        <Link href="/" className="relative w-[83px] h-14 pointer-events-auto">
           <Image
             src={LogoImg}
             alt="Logo"
@@ -37,7 +37,7 @@ export function Header() {
         <nav>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="group relative flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
+            className="group relative flex h-5 w-8 cursor-pointer flex-col items-center justify-between pointer-events-auto"
             aria-label="Toggle menu"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -47,7 +47,7 @@ export function Header() {
 
           {/* Menu Fullscreen */}
           {isOpen && (
-            <div className="fixed inset-0 z-40 bg-zinc-950 flex flex-col items-center justify-center space-y-4 text-4xl font-bold text-white">
+            <div className="fixed inset-0 z-40 bg-zinc-950 flex flex-col items-center justify-center space-y-4 text-4xl font-bold text-white transition-all duration-500 animate-in fade-in pointer-events-auto">
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-6 right-6 cursor-pointer transition hover:text-gray-400"
