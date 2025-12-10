@@ -1,6 +1,7 @@
 import CreativeBackground from "@/components/ui/CreativeBackground";
 import { Header } from "@/components/layout/Header";
 import Scene from "@/components/3d/Scene";
+import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -24,7 +25,10 @@ export default function Home() {
               <p className="text-start">IS BETTER THAN PERFECT.</p>
             </div>
           </div>
-
+        </section>
+        <About />
+        <section className="min-h-[50vh] bg-red-900 flex items-center justify-center">
+            <h2 className="opacity-50 font-extrabold">PRÓXIMO: HERO 3 (MACBOOK)</h2>
         </section>
       </main>
     </>
