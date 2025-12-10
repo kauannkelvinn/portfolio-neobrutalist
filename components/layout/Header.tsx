@@ -1,0 +1,140 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { X } from "lucide-react";
+import { ButtonMenu } from "../ui/ButtonMenu";
+import CreativeBackground from "../ui/CreativeBackground";
+import LogoImg from "@/assets/images/logo.png";
+
+export function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
+  const handleLinkClick = () => setIsOpen(false);
+
+  return (
+    <header className="fixed top-0 left-0 w-full z-50">
+      <div className="w-full mx-auto flex items-center justify-between px-7 py-3">
+        <Link href="/" className="relative w-[83px] h-14">
+          <Image
+            src={LogoImg}
+            alt="Logo"
+            fill
+            className="object-contain"
+          />
+        </Link>
+
+        <nav>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="group relative flex h-5 w-8 cursor-pointer flex-col items-center justify-between"
+            aria-label="Toggle menu"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <ButtonMenu isOpen={isOpen} isHovered={isHovered} />
+          </button>
+
+          {/* Menu Fullscreen */}
+          {isOpen && (
+            <div className="fixed inset-0 z-40 bg-zinc-950 flex flex-col items-center justify-center space-y-4 text-4xl font-bold text-white">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-6 right-6 cursor-pointer transition hover:text-gray-400"
+              >
+                <X size={30} />
+              </button>
+
+              <Link
+                href="/"
+                onClick={handleLinkClick}
+                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+              >
+                HOME
+              </Link>
+
+              <Link
+                href="/#about"
+                onClick={handleLinkClick}
+                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+              >
+                ABOUT
+              </Link>
+
+              <Link
+                href="/#work"
+                onClick={handleLinkClick}
+                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+              >
+                WORK
+              </Link>
+
+              <Link
+                href="/#statistics"
+                onClick={handleLinkClick}
+                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+              >
+                STATISTICS
+              </Link>
+
+              <Link
+                href="/#contact"
+                onClick={handleLinkClick}
+                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+              >
+                CONTACT
+              </Link>
+
+              <CreativeBackground />
+
+              <footer className="absolute inset-x-0 bottom-0 px-8 pb-8 md:px-12">
+                <div className="flex w-full flex-col items-start space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
+                  <div className="font-mono text-xs tracking-widest uppercase">
+                    ©2025 ALL RIGHTS RESERVED
+                  </div>
+
+                  <div className="flex flex-col items-start space-y-2 text-xs font-mono uppercase tracking-widest text-white md:flex-row md:items-center md:space-y-0 md:space-x-6">
+                    <a
+                      href="https://www.linkedin.com/in/kauannkelvinn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-gray-400"
+                    >
+                      LINKEDIN
+                    </a>
+                    <a
+                      href="https://www.instagram.com/kauannkelvin/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-gray-400"
+                    >
+                      INSTAGRAM
+                    </a>
+                    <a
+                      href="https://github.com/kauannkelvinn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-gray-400"
+                    >
+                      GITHUB
+                    </a>
+                  </div>
+                </div>
+              </footer>
+            </div>
+          )}
+        </nav>
+      </div>
+    </header>
+  );
+}
