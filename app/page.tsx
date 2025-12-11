@@ -1,8 +1,10 @@
 import CreativeBackground from "@/components/ui/CreativeBackground";
 import { Header } from "@/components/layout/Header";
 import Scene from "@/components/3d/Scene";
-import { About } from "@/components/sections/About";
 import SceneMacbook from "@/components/3d/SceneMacbook";
+import { About } from "@/components/sections/About";
+import { AboutModern } from "@/components/sections/AboutModern";
+import SceneCyber from "@/components/3d/SceneCyber";
 
 export default function Home() {
   return (
@@ -30,6 +32,10 @@ export default function Home() {
         <About />
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
             <SceneMacbook />
+        </section>
+        <AboutModern />
+        <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
+             <SceneCyber />
         </section>
       </main>
     </>

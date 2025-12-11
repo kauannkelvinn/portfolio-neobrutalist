@@ -97,7 +97,7 @@ export function Macbook(props: React.ComponentProps<"group">) {
             boxShadow: '0 0 10px rgba(0,0,0,0.5)'
           }}
         >
-          <div className="flex flex-col h-full w-full font-mono text-[10px] text-gray-300">
+          <div className="flex flex-col h-full w-full font-mono text-[10px] text-gray-300 selection:bg-white/15 selection:text-white">
 
             <div className="bg-[#2d2d2d] h-6 flex items-center px-3 space-x-2 w-full border-b border-black/20">
               <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />

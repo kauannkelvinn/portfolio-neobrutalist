@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
-import { Computer } from "@/Computer";
+import { Computer } from "@/components/3d/Computer";
 
 export default function Scene() {
     return (
