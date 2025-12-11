@@ -7,7 +7,7 @@ export function About() {
       <ImageTrail>
         <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
             
-          <h2 className="text-5xl md:text-8xl font-extrabold tracking-[-0.08em] leading-[0.8] uppercase text-center mb-16 md:mb-24 mix-blend-difference hover:text-brand-red transition-colors duration-500 cursor-default">
+          <h2 className="text-5xl md:text-8xl font-extrabold tracking-[-0.08em] leading-[0.8] uppercase text-center mb-16 md:mb-24 mix-blend-difference cursor-default">
             QUEM <br/>
             SOU EU?
           </h2>

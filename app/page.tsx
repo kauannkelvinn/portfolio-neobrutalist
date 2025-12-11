@@ -2,6 +2,7 @@ import CreativeBackground from "@/components/ui/CreativeBackground";
 import { Header } from "@/components/layout/Header";
 import Scene from "@/components/3d/Scene";
 import { About } from "@/components/sections/About";
+import SceneMacbook from "@/components/3d/SceneMacbook";
 
 export default function Home() {
   return (
@@ -27,8 +28,8 @@ export default function Home() {
           </div>
         </section>
         <About />
-        <section className="min-h-[50vh] bg-red-900 flex items-center justify-center">
-            <h2 className="opacity-50 font-extrabold">PRÓXIMO: HERO 3 (MACBOOK)</h2>
+        <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
+            <SceneMacbook />
         </section>
       </main>
     </>
