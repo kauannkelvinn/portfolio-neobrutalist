@@ -30,7 +30,7 @@ export function ProjectCard({ title, description, tags, link, index }: ProjectPr
         </span>
 
         <div className="flex justify-between items-start mb-6">
-          <h3 className="font-extrabold text-xl md:text-2xl font-bold uppercase leading-[0.9] text-brand-white group-hover:text-brand-red transition-colors max-w-[80%]">
+          <h3 className="font-extrabold text-xl md:text-2xl uppercase leading-[0.9] text-brand-white group-hover:text-brand-red transition-colors max-w-[80%]">
             {title}
           </h3>
           <div className="bg-brand-white text-brand-black p-1 rounded-sm group-hover:bg-brand-red group-hover:text-white transition-colors">
