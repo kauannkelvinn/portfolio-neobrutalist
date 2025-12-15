@@ -9,6 +9,7 @@ import { AboutCyber } from "@/components/sections/AboutCyber";
 import { Projects } from "@/components/sections/Projects";
 import { Process } from "@/components/sections/Process";
 import { Companies } from "@/components/sections/Companies";
+import { Skills } from "@/components/sections/Section";
 
 export default function Home() {
   return (
@@ -45,6 +46,7 @@ export default function Home() {
         <Projects />
         <Process />
         <Companies />
+        <Skills />
       </main>
     </>
   );
