@@ -5,6 +5,7 @@ import SceneMacbook from "@/components/3d/SceneMacbook";
 import { About } from "@/components/sections/About";
 import { AboutModern } from "@/components/sections/AboutModern";
 import SceneCyber from "@/components/3d/SceneCyber";
+import { AboutCyber } from "@/components/sections/AboutCyber";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
              <SceneCyber />
         </section>
+        <AboutCyber />
       </main>
     </>
   );
