@@ -1,0 +1,33 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export function Marquee() {
+    return (
+        <div className="w-full overflow-hidden bg-brand-red py-6 border-y-4 border-brand-black relative z-20">
+            <motion.div
+                className="flex whitespace-nowrap"
+                animate={{ x: [0, -1000] }}
+                transition={{
+                    repeat: Infinity,
+                    ease: "linear",
+                    duration: 20,
+                }}
+            >
+                {Array.from({ length: 12 }).map((_, i) => (
+                    <span
+                        key={i}
+                        className="font-display text-[5rem] md:text-[8rem] font-black uppercase text-brand-black mr-12 leading-none select-none"
+                        style={{
+                            WebkitTextStroke: "2px white",
+                            color: "transparent"
+                        }}
+                    >
+                        WORK
+                    </span>
+                ))}
+            </motion.div>
+        </div>
+    )
+}
+

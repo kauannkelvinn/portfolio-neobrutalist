@@ -6,6 +6,7 @@ import { About } from "@/components/sections/About";
 import { AboutModern } from "@/components/sections/AboutModern";
 import SceneCyber from "@/components/3d/SceneCyber";
 import { AboutCyber } from "@/components/sections/AboutCyber";
+import { Projects } from "@/components/sections/Projects";
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
              <SceneCyber />
         </section>
         <AboutCyber />
+        <Projects />
       </main>
     </>
   );
