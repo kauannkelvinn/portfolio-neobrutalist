@@ -10,6 +10,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Process } from "@/components/sections/Process";
 import { Companies } from "@/components/sections/Companies";
 import { Skills } from "@/components/sections/Section";
+import ContactFooter from "@/components/sections/ContactFooter";
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ export default function Home() {
         <Process />
         <Companies />
         <Skills />
+        <ContactFooter />
       </main>
     </>
   );
