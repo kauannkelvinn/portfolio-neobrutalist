@@ -32,18 +32,18 @@ export async function sendEmail(prevState: FormState | null, formData: FormData)
       errors: result.error.flatten().fieldErrors 
     }
   }
-
   try {
     await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to: 'kauankelvin7777@gmail.com',
       subject: `Nova mensagem de ${result.data.name}`, 
-      
       text: `Nome: ${result.data.name}\nEmail: ${result.data.email}\n\nMensagem:\n${result.data.message}`,
       
-      replyTo: result.data.email, 
+      headers: {
+        'Reply-To': result.data.email
+      }
     })
-
+  
     return { success: true, message: "Email enviado com sucesso!" }
   } catch (error) {
     console.error('Erro ao enviar email:', error)
