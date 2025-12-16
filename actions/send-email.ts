@@ -48,7 +48,6 @@ export async function sendEmail(prevState: FormState | null, formData: FormData)
       to: 'kauankelvin7777@gmail.com',
       subject: `Nova mensagem de ${result.data.name}`,
       text: `Nome: ${result.data.name}\nEmail: ${result.data.email}\n\nMensagem:\n${result.data.message}`,
-      
       headers: {
         'Reply-To': result.data.email
       }
@@ -59,6 +58,20 @@ export async function sendEmail(prevState: FormState | null, formData: FormData)
 
   } catch (error) {
     console.error('ERRO AO ENVIAR:', error)
-    return { success: false, message: "Erro ao enviar email. Tente novamente." }
+    
+    let errorMessage = "Erro desconhecido"
+    
+    if (error instanceof Error) {
+      errorMessage = error.message
+    } else if (typeof error === "object") {
+      errorMessage = JSON.stringify(error)
+    } else {
+      errorMessage = String(error)
+    }
+
+    return { 
+      success: false, 
+      message: `DEBUG ERROR: ${errorMessage}` 
+    }
   }
 }
