@@ -20,7 +20,7 @@ export default function ContactFooter() {
       setMessage('Mensagem enviada! Entrarei em contato em breve.')
       ;(event.target as HTMLFormElement).reset()
     } else {
-      setMessage('Erro ao enviar. Tente novamente.')
+      setMessage(res?.message || 'Erro ao enviar. Tente novamente.')
     }
     setPending(false)
   }

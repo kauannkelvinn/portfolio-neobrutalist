@@ -57,21 +57,13 @@ export async function sendEmail(prevState: FormState | null, formData: FormData)
     return { success: true, message: "Email enviado com sucesso!" }
 
   } catch (error) {
-    console.error('ERRO AO ENVIAR:', error)
+    const errorMessage = error instanceof Error ? error.message : JSON.stringify(error);
     
-    let errorMessage = "Erro desconhecido"
-    
-    if (error instanceof Error) {
-      errorMessage = error.message
-    } else if (typeof error === "object") {
-      errorMessage = JSON.stringify(error)
-    } else {
-      errorMessage = String(error)
-    }
+    console.error('ERRO NO SERVER:', errorMessage);
 
     return { 
       success: false, 
-      message: `DEBUG ERROR: ${errorMessage}` 
+      message: `ERRO REAL: ${errorMessage}` 
     }
   }
 }
