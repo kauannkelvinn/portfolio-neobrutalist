@@ -19,11 +19,18 @@ const contactFormSchema = z.object({
   message: z.string().min(10, "A mensagem deve ter pelo menos 10 caracteres"),
 })
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function sendEmail(prevState: FormState | null, formData: FormData): Promise<FormState> {
+  console.log("Server Action iniciada...")
+
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.error("ERRO CRÍTICO: RESEND_API_KEY não encontrada nas variáveis de ambiente.")
+    return { success: false, message: "Erro interno de configuração (API Key missing)." }
+  }
+
+  const resend = new Resend(apiKey)
+
   const data = Object.fromEntries(formData.entries())
-  
   const result = contactFormSchema.safeParse(data)
 
   if (!result.success) {
@@ -32,21 +39,26 @@ export async function sendEmail(prevState: FormState | null, formData: FormData)
       errors: result.error.flatten().fieldErrors 
     }
   }
+
   try {
+    console.log("Tentando enviar email via Resend...")
+    
     await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to: 'kauankelvin7777@gmail.com',
-      subject: `Nova mensagem de ${result.data.name}`, 
+      subject: `Nova mensagem de ${result.data.name}`,
       text: `Nome: ${result.data.name}\nEmail: ${result.data.email}\n\nMensagem:\n${result.data.message}`,
       
       headers: {
         'Reply-To': result.data.email
       }
     })
-  
+
+    console.log("Email enviado com sucesso!")
     return { success: true, message: "Email enviado com sucesso!" }
+
   } catch (error) {
-    console.error('Erro ao enviar email:', error)
+    console.error('ERRO AO ENVIAR:', error)
     return { success: false, message: "Erro ao enviar email. Tente novamente." }
   }
 }
