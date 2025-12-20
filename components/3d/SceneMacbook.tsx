@@ -1,23 +1,39 @@
 "use client";
 
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls, Preload } from "@react-three/drei";
 import { Macbook } from "./Macbook";
+import BootLoader from "./BootLoader";
 
 export default function SceneMacbook() {
+  const [showModel, setShowModel] = useState(false);
+
   return (
     <div className="w-full h-full absolute inset-0 z-0 pointer-events-auto">
       <Canvas 
+        dpr={[1, 1.5]} 
+        gl={{ powerPreference: "high-performance", antialias: false }}
         camera={{ position: [0, 5, 10], fov: 35 }}
         className="w-full h-full"
       >
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[-5, 5, 5]} intensity={2} color="#4f46e5" />
-        <pointLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
+        <BootLoader onReady={() => setTimeout(() => setShowModel(true), 500)} />
 
-        <Macbook />
+        <Suspense fallback={null}>
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[-5, 5, 5]} intensity={2} color="#4f46e5" />
+            <pointLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
 
-        <Environment preset="city" />
+            <group visible={showModel}>
+                <Macbook showScreen={showModel}/>
+            </group>
+
+            <Preload all />
+        </Suspense>
+
+        <Suspense fallback={null}>
+             <Environment preset="city" />
+        </Suspense>
         
         <OrbitControls 
           enableZoom={false}

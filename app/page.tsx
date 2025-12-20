@@ -1,5 +1,6 @@
 import CreativeBackground from "@/components/ui/CreativeBackground";
 import { Header } from "@/components/layout/Header";
+import LazyLoad from "@/components/layout/LazyLoad";
 import Scene from "@/components/3d/Scene";
 import SceneMacbook from "@/components/3d/SceneMacbook";
 import { About } from "@/components/sections/About";
@@ -20,8 +21,10 @@ export default function Home() {
 
       <main className="bg-zinc-950 text-white">
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-red-900 px-6 text-white">
-          <div className="absolute inset-0 z-10"> 
-            <Scene />
+          <div className="absolute inset-0 z-10">
+            <LazyLoad>
+              <Scene />
+            </LazyLoad>
           </div>
 
           <div className="absolute top-4 right-50 z-10 flex space-y-4 gap-20 pointer-events-none">
@@ -37,11 +40,15 @@ export default function Home() {
         </section>
         <About />
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
+          <LazyLoad>
             <SceneMacbook />
+          </LazyLoad>
         </section>
         <AboutModern />
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
-             <SceneCyber />
+          <LazyLoad>
+            <SceneCyber />
+          </LazyLoad>
         </section>
         <AboutCyber />
         <Projects />

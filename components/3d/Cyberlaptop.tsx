@@ -29,21 +29,21 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Cyberlaptop(props: React.ComponentProps<"group">) {
+type CyberlaptopProps = React.ComponentProps<"group"> & { 
+  showScreen?: boolean; 
+};
+
+export function Cyberlaptop({ showScreen = true, ...props }: CyberlaptopProps) {
   const { nodes, materials } = useGLTF("/cyberlaptop-transformed.glb") as unknown as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
   const { viewport } = useThree();
 
   const isMobile = viewport.width < 5;
-
   const responsiveScale = isMobile ? 0.8 : 1.5; 
-
   const responsivePosition: [number, number, number] = [0, isMobile ? -0.5 : -0.2, 0];
-
   const screenPosition: [number, number, number] = isMobile
     ? [0, -0.350, -0.425]
     : [0, 0.120, -0.517];
-
   const responsiveDistanceFactor = isMobile ? 1.1 : 1.1;
 
   const [logs, setLogs] = useState<string[]>([]);
@@ -93,48 +93,47 @@ export function Cyberlaptop(props: React.ComponentProps<"group">) {
         <mesh geometry={nodes.defaultMaterial_7.geometry} material={materials.Carcasa_1} />
       </group>
 
-      <group 
-        position={screenPosition} 
-        rotation={[-0.250, 0, 0]} 
-      >
-        <Html 
-          transform 
-          occlude 
-          distanceFactor={responsiveDistanceFactor} 
-          position={[0, 0, 0]}
-          style={{
-            width: '490px',
-            height: '370px',
-            background: '#050505',
-            border: '2px solid rgba(34, 197, 94, 0.5)', 
-            boxShadow: '0 0 30px rgba(34, 197, 94, 0.15)',
-            overflow: 'hidden',
-            fontFamily: 'monospace',
-            borderRadius: '4px'
-          }}
-        >
-          <div className="w-full h-full p-6 text-green-500 text-xs md:text-sm font-mono flex flex-col relative select-none pointer-events-none tracking-wider">
-            
-            <div className="flex justify-between border-b border-green-900/50 pb-2 mb-4 opacity-80">
-               <span>root@cyberdeck:~# ./init_sequence.sh</span>
-               <span className="animate-pulse text-green-400">● LIVE</span>
+      <group position={screenPosition} rotation={[-0.250, 0, 0]}>
+        
+        {showScreen && (
+          <Html 
+            transform 
+            occlude 
+            distanceFactor={responsiveDistanceFactor} 
+            position={[0, 0, 0]}
+            style={{
+              width: '490px',
+              height: '370px',
+              background: '#050505',
+              border: '2px solid rgba(34, 197, 94, 0.5)', 
+              boxShadow: '0 0 30px rgba(34, 197, 94, 0.15)',
+              overflow: 'hidden',
+              fontFamily: 'monospace',
+              borderRadius: '4px'
+            }}
+          >
+            <div className="w-full h-full p-6 text-green-500 text-xs md:text-sm font-mono flex flex-col relative select-none pointer-events-none tracking-wider">
+              
+              <div className="flex justify-between border-b border-green-900/50 pb-2 mb-4 opacity-80">
+                 <span>root@cyberdeck:~# ./init_sequence.sh</span>
+                 <span className="animate-pulse text-green-400">● LIVE</span>
+              </div>
+
+              <div className="flex-1 overflow-hidden flex flex-col justify-end space-y-1">
+                 {logs.map((log, index) => (
+                   <div key={index} className="opacity-90 flex">
+                     <span className="text-green-700 mr-3">[{new Date().toLocaleTimeString()}]</span>
+                     <span className="text-green-400 font-bold">{log}</span>
+                   </div>
+                 ))}
+                 <div className="mt-2 animate-pulse text-green-300">_</div>
+              </div>
+
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(0,255,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 pointer-events-none bg-size[:100%_4px,6px_100%] opacity-40"></div>
+              <div className="absolute inset-0 bg-radial-gradient(circle, transparent 60%, black 100%) pointer-events-none opacity-50"></div>
             </div>
-
-            <div className="flex-1 overflow-hidden flex flex-col justify-end space-y-1">
-               {logs.map((log, index) => (
-                 <div key={index} className="opacity-90 flex">
-                   <span className="text-green-700 mr-3">[{new Date().toLocaleTimeString()}]</span>
-                   <span className="text-green-400 font-bold">{log}</span>
-                 </div>
-               ))}
-               <div className="mt-2 animate-pulse text-green-300">_</div>
-            </div>
-
-
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(0,255,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 pointer-events-none bg-size[:100%_4px,6px_100%] opacity-40"></div>
-            <div className="absolute inset-0 bg-radial-gradient(circle, transparent 60%, black 100%) pointer-events-none opacity-50"></div>
-          </div>
-        </Html>
+          </Html>
+        )}
       </group>
     </group>
   );

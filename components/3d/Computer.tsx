@@ -20,7 +20,7 @@ export function Computer(props: React.JSX.IntrinsicElements["group"]) {
   const groupRef = useRef<THREE.Group>(null);
   const { viewport } = useThree();
   const isMobile = viewport.width < 50;
-  const responsiveScale = isMobile ? 0.12 : 0.22;
+  const responsiveScale = isMobile ? 0.12 : 0.15;
   const responsivePosition: [number, number, number] = [0, isMobile ? -1 : -3, 0];
 
   useFrame((state) => {
