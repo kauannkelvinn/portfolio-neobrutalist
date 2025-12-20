@@ -37,10 +37,10 @@ export default function ContactFooter() {
           className="w-full max-w-2xl"
         >
           <div className="mb-12 text-center">
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
+            <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
               Vamos <span className="text-red-600">Conversar?</span>
             </h2>
-            <p className="text-zinc-400 text-lg">
+            <p className="font-body text-zinc-400 text-lg">
               Tem um projeto em mente ou quer apenas trocar uma ideia?
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function ContactFooter() {
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold uppercase tracking-wider text-red-500">Nome</label>
+                  <label htmlFor="name" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Nome</label>
                   <input 
                     name="name" 
                     required 
@@ -61,7 +61,7 @@ export default function ContactFooter() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold uppercase tracking-wider text-red-500">Email</label>
+                  <label htmlFor="email" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Email</label>
                   <input 
                     name="email" 
                     required 
@@ -73,7 +73,7 @@ export default function ContactFooter() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold uppercase tracking-wider text-red-500">Mensagem</label>
+                <label htmlFor="message" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Mensagem</label>
                 <textarea 
                   name="message" 
                   required 
@@ -86,7 +86,7 @@ export default function ContactFooter() {
               <button 
                 disabled={pending}
                 type="submit" 
-                className="w-full bg-white text-black font-black uppercase tracking-wider py-4 hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-heading w-full bg-white text-black font-black uppercase tracking-widest py-4 hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {pending ? 'Enviando...' : 'Enviar Mensagem'}
                 {!pending && <ArrowUpRight size={20} />}
@@ -108,7 +108,7 @@ export default function ContactFooter() {
             
             <div className="space-y-4">
                {['Home', 'Work', 'Skills', 'Contact'].map((item) => (
-                 <a key={item} href={`#${item.toLowerCase()}`} className="block text-2xl md:text-4xl font-black uppercase tracking-tighter hover:text-white transition-colors cursor-pointer border-b-2 border-black/20 hover:border-white w-max">
+                 <a key={item} href={`#${item.toLowerCase()}`} className="block text-2xl md:text-4xl font-black font-heading uppercase tracking-tighter hover:text-white transition-colors cursor-pointer border-b-2 border-black/20 hover:border-white w-max">
                    {item}
                  </a>
                ))}
@@ -127,7 +127,7 @@ export default function ContactFooter() {
                 </a>
               </div>
               
-              <div className="flex flex-col md:items-end font-bold uppercase tracking-widest text-sm opacity-80">
+              <div className="font-heading flex flex-col md:items-end font-bold uppercase tracking-widest text-sm opacity-80">
                 <span>Developed by Kauan Kelvin</span>
                 <span>All Rights Reserved</span>
                 <span className="mt-2 text-white">Brazil 2025</span>

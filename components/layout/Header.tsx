@@ -58,7 +58,7 @@ export function Header() {
               <Link
                 href="/"
                 onClick={handleLinkClick}
-                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
               >
                 HOME
               </Link>
@@ -66,7 +66,7 @@ export function Header() {
               <Link
                 href="/#about"
                 onClick={handleLinkClick}
-                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
               >
                 ABOUT
               </Link>
@@ -74,7 +74,7 @@ export function Header() {
               <Link
                 href="/#work"
                 onClick={handleLinkClick}
-                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
               >
                 WORK
               </Link>
@@ -82,7 +82,7 @@ export function Header() {
               <Link
                 href="/#statistics"
                 onClick={handleLinkClick}
-                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
               >
                 STATISTICS
               </Link>
@@ -90,7 +90,7 @@ export function Header() {
               <Link
                 href="/#contact"
                 onClick={handleLinkClick}
-                className="text-6xl font-extrabold tracking-[-0.08em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
               >
                 CONTACT
               </Link>

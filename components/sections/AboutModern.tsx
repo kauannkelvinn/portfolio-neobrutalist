@@ -9,16 +9,16 @@ export function AboutModern() {
       <ImageTrail>
         <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
             
-          <h2 className="font-extrabold  text-[2rem] md:text-[4rem] leading-[0.9] uppercase text-center mb-16 mix-blend-difference">
+          <h2 className="font-heading font-extrabold  text-2xl md:text-6xl leading-[0.9] uppercase text-center mb-16 mix-blend-difference">
             Engenharia <br/>
             <span className="text-brand-gray/50">&</span> <span className="text-brand-white">Código</span>
           </h2>
 
           <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 font-mono text-sm md:text-base border-t border-brand-white/10 pt-12">
             
-            <div className="space-y-6 text-brand-gray">
+            <div className="space-y-6 font-body text-brand-gray">
               <p>
-                <strong className="text-brand-white block mb-2 text-xl">O PRESENTE</strong>
+                <strong className="font-heading text-brand-white block mb-2 text-xl">O PRESENTE</strong>
                 A curiosidade evoluiu para competência técnica. Hoje, aquele hacker do computador bege constrói aplicações escaláveis utilizando o ecossistema moderno do JavaScript.
               </p>
               <p>
@@ -26,7 +26,7 @@ export function AboutModern() {
               </p>
             </div>
             
-            <div className="flex flex-col justify-between">
+            <div className="font-body flex flex-col justify-between">
               <ul className="space-y-4">
                 <li className="flex items-center gap-4">
                     <span className="w-2 h-2 bg-brand-red rounded-full"></span>
@@ -43,7 +43,7 @@ export function AboutModern() {
               </ul>
               
               <div className="mt-10 pt-10 border-t border-brand-white/10">
-                 <p className="text-xs uppercase tracking-widest text-brand-gray mb-2">Filosofia de Código</p>
+                 <p className="font-heading text-xs uppercase tracking-widest text-brand-gray mb-2">Filosofia de Codigo</p>
                  <p>Make it work, make it right, make it fast.</p>
               </div>
             </div>

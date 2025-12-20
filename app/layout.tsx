@@ -1,26 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
-  display: "swap",
-});
-
-const exorts = localFont({
-  src: "./fonts/exortscompressed-Bold.woff2",
-  variable: "--font-exorts",
-  display: "swap",
-  weight: "700",
-});
+import { dimensions, helvetica, sfPro } from "./fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Kauan Kelvin | Software Engineer",
@@ -34,8 +14,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} ${sora.variable} ${exorts.variable}`}>
+      <body
+        className={`${dimensions.variable} ${helvetica.variable} ${sfPro.variable} font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white`}
+      >
         {children}
+        
+        <svg style={{ display: 'none' }}>
+          <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+          </filter>
+        </svg>
       </body>
     </html>
   );

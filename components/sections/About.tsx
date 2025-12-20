@@ -6,17 +6,17 @@ export function About() {
       
       <ImageTrail>
         <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
-            
-          <h2 className="text-5xl md:text-8xl font-extrabold tracking-[-0.08em] leading-[0.8] uppercase text-center mb-16 md:mb-24 mix-blend-difference cursor-default">
-            QUEM <br/>
-            SOU EU?
-          </h2>
+
+          <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-[0.8] text-center mb-16 md:mb-24 mix-blend-difference cursor-default">
+            <span className="font-body tracking-[7] font-light text-2xl">quem</span><br/>
+            <span className="tracking-[-3]">SOU EU?</span>
+          </h1>
 
           <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 font-mono text-sm md:text-base border-t border-brand-white/10 pt-12">
             
-            <div className="space-y-6 text-brand-gray">
+            <div className="font-body space-y-6 text-brand-gray">
               <p>
-                <strong className="text-brand-white block mb-2 font-extrabold text-xl">O INÍCIO NO CÓDIGO</strong>
+                <strong className="text-brand-white block mb-2 font-heading text-xl">O INICIO NO CÓDIGO</strong>
                 Tudo começou com a curiosidade de entender como as coisas funcionavam por trás da tela. Aquele computador bege antigo (que você viu lá em cima) representa minhas primeiras linhas de código, onde o terminal era minha única interface.
               </p>
               <p>
@@ -24,12 +24,12 @@ export function About() {
               </p>
             </div>
             
-            <div className="flex flex-col justify-between">
+            <div className="font-body flex flex-col justify-between">
               <p className="text-brand-white/60 italic border-l-2 border-brand-red pl-4">
                 Não é sobre escrever código. É sobre resolver problemas complexos com estilo e eficiência técnica.
               </p>
               
-              <div className="mt-10 grid grid-cols-2 gap-8">
+              <div className="font-heading mt-10 grid grid-cols-2 gap-8">
                  <div>
                     <h3 className="text-2xl font-extrabold text-brand-white">2+</h3>
                     <span className="text-xs text-brand-gray uppercase tracking-widest">Anos de XP</span>

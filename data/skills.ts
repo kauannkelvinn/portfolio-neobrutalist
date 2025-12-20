@@ -16,9 +16,16 @@ export const skillCategories = [
   export const certificates = [
     {
       id: 1,
-      name: "Fullstack Master",
-      issuer: "Rocketseat",
-      image: "/images/certificates/cert-1.png",
+      name: "Desenvolvedor Frontend",
+      issuer: "Dev Em Dobro",
+      image: "../assets/images/certificates/certificadofrontend.png",
+      status: "unlocked"
+    },
+    {
+      id: 1,
+      name: "Desenvolvedor Backend",
+      issuer: "Dev Em Dobro",
+      image: "/images/certificates/",
       status: "unlocked"
     },
     {

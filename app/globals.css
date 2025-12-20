@@ -6,35 +6,16 @@
   --color-brand-white: #e5e5e5;
   --color-brand-zinc-950: #09090b;
   --color-brand-gray: #9ca3af;
+
+  --font-display: var(--font-dimensions), sans-serif;
+  --font-heading: var(--font-helvetica), sans-serif;
+  --font-body: var(--font-sf), sans-serif;
 }
 
-@layer base {
-  :root {
-    --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-heading: "Sora", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "exorts", ui-sans-serif, system-ui, sans-serif;
-  }
-
-  body {
-    font-family: var(--font-heading);
-    background-color: var(--color-brand-black);
-    color: var(--color-brand-white);
-    min-height: 100vh;
-  }
-}
-
-@layer utilities {
-  .font-display {
-    font-family: "exorts", ui-sans-serif, system-ui, sans-serif !important;
-  }
-  
-  .font-heading {
-    font-family: "Sora", ui-sans-serif, system-ui, sans-serif !important;
-  }
-  
-  .font-body {
-    font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
-  }
+body {
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-white);
+  font-family: var(--font-sf), sans-serif; 
 }
 
 .background-spotlight {
@@ -61,4 +42,18 @@
   height: 100%;
   filter: url(#noiseFilter);
   opacity: 0.10;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-dimensions), ui-sans-serif, system-ui, sans-serif !important;
+  }
+  
+  .font-heading {
+    font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif !important;
+  }
+
+  .font-body {
+    font-family: var(--font-sf), ui-sans-serif, system-ui, sans-serif !important;
+  }
 }

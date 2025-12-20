@@ -13,16 +13,9 @@ export function Process() {
       
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="mb-16 border-b-4 border-brand-black pb-8">
-            <h2 className="font-display text-[4rem] md:text-[6rem] leading-none uppercase">
-                Metodologia
-            </h2>
-            <p className="font-mono text-xl md:text-2xl mt-4 font-bold opacity-80">
-                DO START AO DEPLOY
-            </p>
-        </div>
+       
 
-        <div className="flex flex-col border-t-4 border-brand-black">
+        <div className="flex flex-col border-brand-black">
           {processSteps.map((step, index) => {
             const isOpen = openIndex === index;
 
@@ -34,10 +27,10 @@ export function Process() {
               >
                 <div className="flex items-center justify-between py-8 md:py-10 px-2 md:px-4">
                     <div className="flex items-center gap-6 md:gap-12">
-                        <span className="font-mono text-2xl md:text-3xl font-bold opacity-50 group-hover:opacity-100">
+                        <span className="font-body text-2xl md:text-2xl font-bold opacity-50 group-hover:opacity-100">
                             {step.id}
                         </span>
-                        <h3 className="font-display text-3xl md:text-6xl uppercase leading-none">
+                        <h3 className="font-body font-extrabold text-2xl md:text-4xl uppercase leading-none">
                             {step.title}
                         </h3>
                     </div>
@@ -57,7 +50,7 @@ export function Process() {
                       className="overflow-hidden"
                     >
                       <div className="pb-10 pl-14 md:pl-28 pr-6 max-w-4xl">
-                        <p className="font-mono text-lg md:text-xl leading-relaxed font-medium">
+                        <p className="font-body text-lg md:text-xl leading-relaxed font-medium">
                             {step.description}
                         </p>
                       </div>
