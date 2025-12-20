@@ -23,7 +23,7 @@ export function Skills() {
                   </h3>
                   <ul className="font-body space-y-3 font-bold tracking-tight text-2xl md:text-3xl uppercase">
                     {category.skills.map((skill) => (
-                      <li key={skill} className="hover:text-brand-red transition-colors cursor-default">
+                      <li key={skill} className="hover:text-brand-red transition-colors cursor-pointer">
                         {skill}
                       </li>
                     ))}

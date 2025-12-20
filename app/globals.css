@@ -109,3 +109,16 @@ body {
   opacity: 0.05;
   visibility: visible;
 }
+
+@media (pointer: fine) {
+  body, 
+  a, 
+  button, 
+  input, 
+  textarea,
+  .cursor-pointer,
+  .cursor-default 
+  {
+    cursor: none !important;
+  }
+}

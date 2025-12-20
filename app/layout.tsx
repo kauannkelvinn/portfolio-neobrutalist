@@ -4,6 +4,7 @@ import SmoothScroll from "@/components/layout/SmoothScrool";
 import { dimensions, helvetica, sfPro } from "./fonts/fonts";
 import { TransitionProvider } from "@/app/context/TransitionContext";
 import PageTransition from "@/components/ui/PageTransition";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Kauan Kelvin | Software Engineer",
@@ -22,6 +23,7 @@ export default function RootLayout({
       >
         <SmoothScroll>
           <TransitionProvider>
+            <CustomCursor />
             <PageTransition />
             <div className="noise-overlay" />
             {children}

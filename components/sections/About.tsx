@@ -7,7 +7,7 @@ export function About() {
 
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
 
-        <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-[0.8] text-center mb-16 md:mb-24 mix-blend-difference cursor-default">
+        <h1 className="font-heading text-5xl md:text-7xl font-extrabold leading-[0.8] text-center mb-16 md:mb-24 mix-blend-difference cursor-pointer">
           <span className="font-body tracking-[7] font-light text-2xl">quem</span><br />
           <span className="tracking-[-3]">SOU EU?</span>
         </h1>
