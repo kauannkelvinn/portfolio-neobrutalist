@@ -1,7 +1,5 @@
 "use client";
 
-// import { ImageTrail } from "../ui/ImageTrail";
-
 export function AboutCyber() {
   return (
     <section className="bg-brand-black text-brand-white relative z-20 overflow-hidden">

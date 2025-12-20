@@ -1,7 +1,5 @@
 "use client";
 
-// import { ImageTrail } from "../ui/ImageTrail";
-
 export function AboutModern() {
   return (
     <section className="bg-brand-black text-brand-white relative z-20">

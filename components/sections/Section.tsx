@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image";
 import { skillCategories, certificates } from "@/data/skills";
 
 export function Skills() {

@@ -23,6 +23,7 @@ export default function RootLayout({
         <SmoothScroll>
           <TransitionProvider>
             <PageTransition />
+            <div className="noise-overlay" />
             {children}
           </TransitionProvider>
         </SmoothScroll>

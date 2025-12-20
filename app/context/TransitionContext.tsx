@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useState  } from 'react'
 import { useRouter } from 'next/navigation'
 
 interface TransitionContextType {
@@ -18,14 +18,11 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
 
     setIsTransitioning(true)
 
-
     await new Promise((resolve) => setTimeout(resolve, 800))
 
     router.push(href)
 
-
     await new Promise((resolve) => setTimeout(resolve, 300))
-
 
     setIsTransitioning(false)
   }

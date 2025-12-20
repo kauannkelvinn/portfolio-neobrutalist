@@ -1,13 +1,12 @@
 "use client";
 
-import { Suspense, useState } from "react"; // <--- Importe useState
+import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, Preload } from "@react-three/drei";
 import { Cyberlaptop } from "./Cyberlaptop";
 import BootLoader from "./BootLoader";
 
 export default function SceneCyber() {
-  // Estado de visibilidade
   const [showModel, setShowModel] = useState(false);
 
   return (

@@ -50,8 +50,7 @@ export default function BootLoader({ onReady }: { onReady?: () => void }) {
   }, [visualProgress, realProgress, onReady])
 
   if (isFadingOut && visualProgress >= 100) {
-      // Retorna null aqui faria sumir brusco, deixamos o CSS cuidar do fade out visual
-      // O componente será desmontado pelo pai quando o showModel virar true
+      
   }
 
   return (

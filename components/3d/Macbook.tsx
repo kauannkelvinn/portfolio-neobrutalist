@@ -83,8 +83,6 @@ export function Macbook({ showScreen = true, ...props }: MacbookProps) {
       </group>
 
       <group position={screenPosition} rotation={[-0.35, 0, 0]}>
-        
-        {/* 2. Só renderiza o HTML se showScreen for true */}
         {showScreen && (
           <Html
             transform

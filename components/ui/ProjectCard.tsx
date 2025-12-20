@@ -25,7 +25,7 @@ export function ProjectCard({ title, description, tags, link, index }: ProjectPr
 
       <div className="p-6 md:p-10 flex flex-col h-full bg-zinc-900 relative z-10">
         
-        <span className="font-heading font-mono text-brand-red text-xs mb-4 block opacity-80">
+        <span className="font-heading text-brand-red text-xs mb-4 block opacity-80">
           {(index + 1).toString().padStart(2, '0')} PROJECT
         </span>
 
@@ -46,7 +46,7 @@ export function ProjectCard({ title, description, tags, link, index }: ProjectPr
           {tags.map((tag) => (
             <span 
               key={tag} 
-              className="font-heading text-[10px] md:text-xs font-mono uppercase tracking-wider border border-white/20 px-2 py-1 rounded-sm text-zinc-300 group-hover:border-brand-red group-hover:text-brand-red transition-colors"
+              className="font-heading text-[10px] md:text-xs uppercase tracking-wider border border-white/20 px-2 py-1 rounded-sm text-zinc-300 group-hover:border-brand-red group-hover:text-brand-red transition-colors"
             >
               {tag}
             </span>

@@ -1,4 +1,4 @@
-"use client"; // <--- OBRIGATÓRIO: Lenis precisa rodar no browser
+"use client";
 
 import { ReactLenis } from "lenis/react";
 import { ReactNode } from "react";
