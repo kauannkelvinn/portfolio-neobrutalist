@@ -7,10 +7,12 @@ import { X } from "lucide-react";
 import { ButtonMenu } from "../ui/ButtonMenu";
 import CreativeBackground from "../ui/CreativeBackground";
 import LogoImg from "@/assets/images/logo.png";
+import { useTransition } from "@/app/context/TransitionContext"; 
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { startTransition } = useTransition();
 
   useEffect(() => {
     if (isOpen) {
@@ -20,12 +22,20 @@ export function Header() {
     }
   }, [isOpen]);
 
-  const handleLinkClick = () => setIsOpen(false);
+  const handleNavigation = async (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    await startTransition(href);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 pointer-events-none">
       <div className="w-full mx-auto flex items-center justify-between px-7 py-3">
-        <Link href="/" className="relative w-[83px] h-14 pointer-events-auto">
+        <Link 
+            href="/" 
+            onClick={(e) => handleNavigation(e, '/')}
+            className="relative w-[83px] h-14 pointer-events-auto"
+        >
           <Image
             src={LogoImg}
             alt="Logo"
@@ -45,7 +55,6 @@ export function Header() {
             <ButtonMenu isOpen={isOpen} isHovered={isHovered} />
           </button>
 
-          {/* Menu Fullscreen */}
           {isOpen && (
             <div className="fixed inset-0 z-40 bg-zinc-950 flex flex-col items-center justify-center space-y-4 text-4xl font-bold text-white transition-all duration-500 animate-in fade-in pointer-events-auto">
               <button
@@ -54,43 +63,43 @@ export function Header() {
               >
                 <X size={30} />
               </button>
-
+              
               <Link
                 href="/"
-                onClick={handleLinkClick}
-                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                onClick={(e) => handleNavigation(e, '/')}
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer"
               >
                 HOME
               </Link>
 
               <Link
                 href="/#about"
-                onClick={handleLinkClick}
-                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                onClick={(e) => handleNavigation(e, '/#about')}
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer"
               >
                 ABOUT
               </Link>
 
               <Link
                 href="/#work"
-                onClick={handleLinkClick}
-                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                onClick={(e) => handleNavigation(e, '/#work')}
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer"
               >
                 WORK
               </Link>
 
               <Link
                 href="/#statistics"
-                onClick={handleLinkClick}
-                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                onClick={(e) => handleNavigation(e, '/#statistics')}
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer"
               >
                 STATISTICS
               </Link>
 
               <Link
                 href="/#contact"
-                onClick={handleLinkClick}
-                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400"
+                onClick={(e) => handleNavigation(e, '/#contact')}
+                className="text-6xl font-heading font-extrabold tracking-[-0.06em] transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer"
               >
                 CONTACT
               </Link>
