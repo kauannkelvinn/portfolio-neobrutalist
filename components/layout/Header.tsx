@@ -122,14 +122,6 @@ export function Header() {
                       LINKEDIN
                     </a>
                     <a
-                      href="https://www.instagram.com/kauannkelvin/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-gray-400"
-                    >
-                      INSTAGRAM
-                    </a>
-                    <a
                       href="https://github.com/kauannkelvinn"
                       target="_blank"
                       rel="noopener noreferrer"

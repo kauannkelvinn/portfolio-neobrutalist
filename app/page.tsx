@@ -10,7 +10,7 @@ import { AboutCyber } from "@/components/sections/AboutCyber";
 import { Projects } from "@/components/sections/Projects";
 import { Process } from "@/components/sections/Process";
 import { Companies } from "@/components/sections/Companies";
-import { Skills } from "@/components/sections/Section";
+import { Skills } from "@/components/sections/Skills";
 import ContactFooter from "@/components/sections/ContactFooter";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
 
       <main className="bg-zinc-950 text-white">
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-red-900 px-6 text-white">
-          <div className="absolute inset-0 z-10">
+          <div id="home" className="absolute inset-0 z-10">
             <LazyLoad>
               <Scene />
             </LazyLoad>

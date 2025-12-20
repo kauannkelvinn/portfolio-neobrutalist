@@ -1,13 +1,17 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { sendEmail } from '@/actions/send-email'
-import { Github, Linkedin, Instagram, ArrowUpRight } from 'lucide-react'
+import { Github, Linkedin, ArrowUpRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { useTransition } from '@/app/context/TransitionContext'
 
 export default function ContactFooter() {
   const [pending, setPending] = useState(false)
   const [message, setMessage] = useState('')
+  
+
+  const { startTransition } = useTransition()
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -25,8 +29,13 @@ export default function ContactFooter() {
     setPending(false)
   }
 
+  const handleNavigation = async (e: React.MouseEvent, href: string) => {
+    e.preventDefault() 
+    await startTransition(href)
+  }
+
   return (
-    <section className="relative w-full bg-black text-white pt-20 flex flex-col justify-between min-h-screen">
+    <section id="contact" className="relative w-full bg-black text-white pt-20 flex flex-col justify-between min-h-screen">
       
       <div className="container mx-auto px-4 md:px-6 grow flex flex-col justify-center items-center relative z-10">
         <motion.div 
@@ -37,7 +46,7 @@ export default function ContactFooter() {
           className="w-full max-w-2xl"
         >
           <div className="mb-12 text-center">
-            <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
+            <h2 className="font-heading text-fluid-body font-black uppercase tracking-tighter mb-4">
               Vamos <span className="text-red-600">Conversar?</span>
             </h2>
             <p className="font-body text-zinc-400 text-lg">
@@ -86,7 +95,7 @@ export default function ContactFooter() {
               <button 
                 disabled={pending}
                 type="submit" 
-                className="font-heading w-full bg-white text-black font-black uppercase tracking-widest py-4 hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-heading w-full bg-white text-black font-black uppercase tracking-widest py-4 hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {pending ? 'Enviando...' : 'Enviar Mensagem'}
                 {!pending && <ArrowUpRight size={20} />}
@@ -107,22 +116,28 @@ export default function ContactFooter() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
             
             <div className="space-y-4">
-               {['Home', 'Work', 'Skills', 'Contact'].map((item) => (
-                 <a key={item} href={`#${item.toLowerCase()}`} className="block text-2xl md:text-4xl font-black font-heading uppercase tracking-tighter hover:text-white transition-colors cursor-pointer border-b-2 border-black/20 hover:border-white w-max">
-                   {item}
-                 </a>
-               ))}
+               {['Home', 'About', 'Work', 'Statistics', 'Contact'].map((item) => {
+                 const href = item === 'Home' ? '/' : `/#${item.toLowerCase()}`
+                 
+                 return (
+                   <a 
+                     key={item} 
+                     href={href} 
+                     onClick={(e) => handleNavigation(e, href)}
+                     className="block text-2xl md:text-4xl font-black font-heading uppercase tracking-tighter hover:text-white transition-colors cursor-pointer border-b-2 border-black/20 hover:border-white w-max"
+                   >
+                     {item}
+                   </a>
+                 )
+               })}
             </div>
 
             <div className="flex flex-col gap-6 md:items-end">
               <div className="flex gap-4">
-                <a href="#" className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110">
-                  <Instagram size={24} />
-                </a>
-                <a href="#" className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110">
+                <a href="https://www.linkedin.com/in/kauannkelvinn" target='_blank' className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110 cursor-pointer">
                   <Linkedin size={24} />
                 </a>
-                <a href="#" className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110">
+                <a href="https://www.github.com/kauannkelvinn" target='_blank' className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110 cursor-pointer">
                   <Github size={24} />
                 </a>
               </div>
