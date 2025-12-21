@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import React, { useRef, useState, useEffect } from "react";
 import { useGLTF, Html } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -31,18 +31,17 @@ type GLTFResult = GLTF & {
 
 type CyberlaptopProps = React.ComponentProps<"group"> & { 
   showScreen?: boolean; 
+  isMobile: boolean;
 };
 
-export function Cyberlaptop({ showScreen = true, ...props }: CyberlaptopProps) {
+export function Cyberlaptop({ showScreen = true, isMobile, ...props }: CyberlaptopProps) {
   const { nodes, materials } = useGLTF("/cyberlaptop-transformed.glb") as unknown as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
-  const { viewport } = useThree();
-
-  const isMobile = viewport.width < 5;
+  
   const responsiveScale = isMobile ? 0.8 : 1.5; 
   const responsivePosition: [number, number, number] = [0, isMobile ? -0.5 : -0.2, 0];
   const screenPosition: [number, number, number] = isMobile
-    ? [0, -0.350, -0.425]
+    ? [0, -0.100, -0.460]
     : [0, 0.120, -0.517];
   const responsiveDistanceFactor = isMobile ? 1.1 : 1.1;
 

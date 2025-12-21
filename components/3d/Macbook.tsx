@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF, Html } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -39,20 +39,21 @@ type GLTFResult = GLTF & {
 
 type MacbookProps = React.ComponentProps<"group"> & { 
   showScreen?: boolean; 
+  isMobile: boolean;
 };
 
-export function Macbook({ showScreen = true, ...props }: MacbookProps) {
+export function Macbook({ showScreen = true, isMobile, ...props }: MacbookProps) {
   const { nodes, materials } = useGLTF("/macbook-transformed.glb") as unknown as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
-  const { viewport } = useThree();
 
-  const isMobile = viewport.width < 5;
   const responsiveScale = isMobile ? 5.0 : 10;
   const responsivePosition: [number, number, number] = [0, isMobile ? -0.5 : -1, 0];
+  
   const screenPosition: [number, number, number] = isMobile
-    ? [0, 0.143, -0.15]
+    ? [0, 0.103, -0.150]
     : [0, 0.1, -0.149];
 
+  // 3. Floating Animation
   useFrame((state) => {
     if (groupRef.current) {
       groupRef.current.position.y = responsivePosition[1] + Math.sin(state.clock.elapsedTime) * 0.05;

@@ -3,10 +3,13 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, Preload } from "@react-three/drei";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { Macbook } from "./Macbook";
 import BootLoader from "./BootLoader";
+import Effects from "./Effects";
 
 export default function SceneMacbook() {
+  const isMobile = useIsMobile();
   const [showModel, setShowModel] = useState(false);
 
   return (
@@ -19,13 +22,15 @@ export default function SceneMacbook() {
       >
         <BootLoader onReady={() => setTimeout(() => setShowModel(true), 500)} />
 
+        {!isMobile && <Effects />}
+
         <Suspense fallback={null}>
             <ambientLight intensity={1.5} />
             <directionalLight position={[-5, 5, 5]} intensity={2} color="#4f46e5" />
             <pointLight position={[5, 5, 5]} intensity={1} color="#ffffff" />
 
             <group visible={showModel}>
-                <Macbook showScreen={showModel}/>
+                <Macbook showScreen={showModel} isMobile={isMobile}/>
             </group>
 
             <Preload all />
@@ -34,14 +39,15 @@ export default function SceneMacbook() {
         <Suspense fallback={null}>
              <Environment preset="city" />
         </Suspense>
-        
-        <OrbitControls 
-          enableZoom={false}
-          enablePan={false}
-          enableRotate={true}
-          minPolarAngle={Math.PI / 3} 
-          maxPolarAngle={Math.PI / 2}
-        />
+        {!isMobile && (
+            <OrbitControls 
+            enableZoom={false}
+            enablePan={false}
+            enableRotate={true}
+            minPolarAngle={Math.PI / 3} 
+            maxPolarAngle={Math.PI / 2}
+            />
+        )}
       </Canvas>
     </div>
   );

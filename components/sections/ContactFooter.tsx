@@ -65,7 +65,7 @@ export default function ContactFooter() {
                     name="name" 
                     required 
                     type="text" 
-                    className="w-full bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
+                    className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
                     placeholder="Seu nome"
                   />
                 </div>
@@ -75,7 +75,7 @@ export default function ContactFooter() {
                     name="email" 
                     required 
                     type="email" 
-                    className="w-full bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
+                    className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
                     placeholder="seu@email.com"
                   />
                 </div>
@@ -87,7 +87,7 @@ export default function ContactFooter() {
                   name="message" 
                   required 
                   rows={4}
-                  className="w-full bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all resize-none placeholder:text-zinc-600"
+                  className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all resize-none placeholder:text-zinc-600"
                   placeholder="Conte-me sobre seu projeto..."
                 />
               </div>

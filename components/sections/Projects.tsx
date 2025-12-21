@@ -18,7 +18,7 @@ export function Projects() {
 
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <FadeIn>
                 <h2 className="font-heading font-extrabold text-fluid-body uppercase text-brand-white leading-none">
                     Selected <br/> <span className="text-brand-red">Works</span>

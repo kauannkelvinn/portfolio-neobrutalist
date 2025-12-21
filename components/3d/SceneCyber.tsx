@@ -3,10 +3,13 @@
 import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, Preload } from "@react-three/drei";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { Cyberlaptop } from "./Cyberlaptop";
 import BootLoader from "./BootLoader";
+import Effects from "./Effects";
 
 export default function SceneCyber() {
+  const isMobile = useIsMobile();
   const [showModel, setShowModel] = useState(false);
 
   return (
@@ -19,13 +22,15 @@ export default function SceneCyber() {
       >
         <BootLoader onReady={() => setTimeout(() => setShowModel(true), 500)} />
 
+        {!isMobile && <Effects />}
+
         <Suspense fallback={null}>
             <ambientLight intensity={0.2} />
             <directionalLight position={[5, 5, 5]} intensity={1} color="#ff0000" />
             <pointLight position={[-5, 2, -5]} intensity={2} color="#00ffff" />
 
             <group visible={showModel}>
-               <Cyberlaptop showScreen={showModel}/>
+               <Cyberlaptop showScreen={showModel} isMobile={isMobile}/>
             </group>
 
             <Preload all />
@@ -35,14 +40,16 @@ export default function SceneCyber() {
             <Environment preset="night" />
         </Suspense>
         
-        <OrbitControls 
-          enableZoom={false}
-          enablePan={false}
-          enableRotate={true}
-          minPolarAngle={Math.PI / 3} 
-          maxPolarAngle={Math.PI / 2}
-        />
+        {!isMobile && (
+            <OrbitControls 
+            enableZoom={false}
+            enablePan={false}
+            enableRotate={true}
+            minPolarAngle={Math.PI / 3} 
+            maxPolarAngle={Math.PI / 2}
+            />
+        )}
       </Canvas>
     </div>
   );
-}
+};

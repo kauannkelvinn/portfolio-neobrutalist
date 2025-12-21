@@ -18,21 +18,21 @@ export const skillCategories = [
       id: 1,
       name: "Desenvolvedor Frontend",
       issuer: "Dev Em Dobro",
-      image: "../assets/images/certificates/certificadofrontend.png",
+      image: "/certificates/certificadofrontend.png",
       status: "unlocked"
     },
     {
       id: 1,
       name: "Desenvolvedor Backend",
       issuer: "Dev Em Dobro",
-      image: "/images/certificates/",
-      status: "unlocked"
+      image: "/",
+      status: "locked"
     },
     {
       id: 2,
       name: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
-      image: "/images/certificates/cert-2.png",
+      image: "/certificates/awscertified.png",
       status: "locked"
     }
   ];
