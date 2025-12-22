@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+  # Neo-Brutalist Developer Portfolio
 
-First, run the development server:
+  ![Next.js 16](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+  ![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=flat-square&logo=three.js)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat-square&logo=typescript)
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-cyan?style=flat-square&logo=tailwindcss)
+  ![Framer Motion](https://img.shields.io/badge/Motion-Framer-purple?style=flat-square&logo=framer)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <br />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  ![Project Preview](./public/preview-hero.png)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+  <p align="center">
+    Um portfólio imersivo focado em <strong>Performance Extrema</strong> e <strong>Design Neo-Brutalista</strong>.<br />
+    Combinando renderização 3D interativa com as melhores práticas de Core Web Vitals.
+  </p>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  <a href="https://portfolio-neobrutalista.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀_Acessar_Site_Online-000000?style=for-the-badge" alt="Deploy" />
+  </a>
 
-## Learn More
+</div>
 
-To learn more about Next.js, take a look at the following resources:
+<br />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## O Conceito
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Este projeto foge do padrão minimalista tradicional. A estética **Neo-Brutalista** utiliza tipografia ousada, contrastes altos, bordas marcadas e sombras duras para criar uma identidade visual única e memorável, sem sacrificar a usabilidade.
 
-## Deploy on Vercel
+Além do design, o foco técnico foi a **Performance**. Sites com 3D costumam ser pesados, mas aqui foram aplicadas técnicas avançadas de otimização para garantir carregamento instantâneo.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Performance & Mobile
+
+| Desktop Experience | Lighthouse Score (Performance) |
+|:---:|:---:|
+| ![Mobile](./public/preview-mobile.png) | ![Score](./public/preview-lighthouse.png) |
+
+---
+
+## Tech Stack & Decisões Técnicas
+
+* **Core:** [Next.js 16](https://nextjs.org/) (App Router & Server Components)
+* **Linguagem:** TypeScript (Strict Mode)
+* **3D Engine:** [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) (Three.js wrapper para React)
+* **Modelos 3D:** Compressão **Draco** para reduzir arquivos `.glb` em até 90%.
+* **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
+* **Animações:** Framer Motion (Transições de página e micro-interações).
+* **Emails:** Integração com [Resend API](https://resend.com/) para formulário de contato server-side.
+
+## Otimizações Implementadas
+
+1.  **Lazy Loading de 3D:** O modelo 3D pesado só é carregado quando necessário e usa `Suspense` para não bloquear a renderização inicial.
+2.  **Otimização de Imagens:** Uso de `priority` na LCP (Largest Contentful Paint) e `sizes` corretos para responsividade.
+3.  **Fontes:** `next/font` para zero layout shift (CLS).
+4.  **Acessibilidade:** Semântica HTML correta e navegação via teclado.
+
+## Como Rodar Localmente
+
+1.  **Clone o repositório**
+    ```bash
+    git clone [https://github.com/kauannkelvinn/portfolio-neobrutalista.git](https://github.com/kauannkelvinn/portfolio-neobrutalista.git)
+    cd portfolio-neobrutalista
+    ```
+
+2.  **Instale as dependências**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure as variáveis de ambiente**
+    Crie um arquivo `.env` na raiz com sua chave da Resend (para o formulário funcionar):
+    ```bash
+    RESEND_API_KEY=re_123456789
+    ```
+
+4.  **Rode o servidor**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+<div align="center">
+  Desenvolvido por <a href="https://github.com/kauannkelvinn">Kauan Kelvin</a>
+</div>
