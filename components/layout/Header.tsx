@@ -41,6 +41,8 @@ export function Header() {
             alt="Logo"
             fill
             className="object-contain"
+            priority
+            sizes="150px"
           />
         </Link>
 

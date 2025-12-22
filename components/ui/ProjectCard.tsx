@@ -15,6 +15,8 @@ export function ProjectCard({ title, description, tags, link, index }: ProjectPr
       
       <Link 
         href={link} 
+        target="_blank"
+        rel="noopener noreferrer"
         className="absolute inset-0 z-20"
         aria-label={`Ver projeto ${title}`}
       >

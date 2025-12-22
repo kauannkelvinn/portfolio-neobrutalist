@@ -32,6 +32,7 @@ export function Companies() {
                     alt={company.name}
                     fill
                     className="object-contain"
+                    sizes="(max-width: 768px) 150px, 200px"
                   />
                 </div>
               ))}
