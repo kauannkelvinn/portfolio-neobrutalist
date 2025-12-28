@@ -13,12 +13,8 @@ import { Companies } from "@/components/sections/Companies";
 import { Skills } from "@/components/sections/Skills";
 import ContactFooter from "@/components/sections/ContactFooter";
 
-// --- OTIMIZAÇÃO CRÍTICA: DELAY NA CENA PRINCIPAL ---
-// O navegador vai renderizar o site IMEDIATAMENTE.
-// O peso do 3D só será processado após 2 segundos (2000ms).
 const Scene = dynamic(async () => {
-  // Aumente para 4000 (4 segundos). 
-  // O usuário vai ler "UXUI DESIGNER" e ver o site carregado antes do 3D pesar na rede.
+
   await new Promise((resolve) => setTimeout(resolve, 4000));
 
   return import("@/components/3d/Scene");
@@ -31,7 +27,6 @@ const Scene = dynamic(async () => {
   ),
 });
 
-// As outras cenas não precisam de delay, o LazyLoad vai cuidar delas
 const SceneMacbook = dynamic(() => import("@/components/3d/SceneMacbook"), {
   ssr: false,
   loading: () => <div className="w-full h-full bg-transparent" />,
@@ -49,12 +44,8 @@ export default function Home() {
       <CreativeBackground />
 
       <main className="bg-zinc-950 text-white">
-
-        {/* HERO SECTION */}
         <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-red-900 px-6 text-white">
           <div id="home" className="absolute inset-0 z-10">
-            {/* O LazyLoad aqui serve para garantir o unmount se sair da tela, 
-                mas o delay de 2s acima é quem garante a performance inicial */}
             <LazyLoad>
               <Scene />
             </LazyLoad>
