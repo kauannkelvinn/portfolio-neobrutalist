@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function SceneMacbook() {
   const isMobile = useIsMobile();
   const [showModel, setShowModel] = useState(false);
-  const [crashed, setCrashed] = useState(true);
+  const [crashed, setCrashed] = useState(false);
 
   if (crashed) {
     return (
