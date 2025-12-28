@@ -13,12 +13,7 @@ import { Companies } from "@/components/sections/Companies";
 import { Skills } from "@/components/sections/Skills";
 import ContactFooter from "@/components/sections/ContactFooter";
 
-const Scene = dynamic(async () => {
-
-  await new Promise((resolve) => setTimeout(resolve, 4000));
-
-  return import("@/components/3d/Scene");
-}, {
+const Scene = dynamic(() => import("@/components/3d/Scene"), {
   ssr: false,
   loading: () => (
     <div className="flex h-full w-full items-center justify-center text-xs font-mono text-red-500/50 tracking-widest animate-pulse">
