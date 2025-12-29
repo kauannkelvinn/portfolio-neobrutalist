@@ -5,6 +5,7 @@ import { dimensions, helvetica, sfPro } from "./fonts/fonts";
 import { TransitionProvider } from "@/app/context/TransitionContext";
 import PageTransition from "@/components/ui/PageTransition";
 import CustomCursor from "@/components/ui/CustomCursor";
+import NoiseOverlay from "@/components/ui/NoiseOverlay";
 
 export const metadata: Metadata = {
   title: "Kauan Kelvin | Software Engineer",
@@ -21,11 +22,12 @@ export default function RootLayout({
       <body
         className={`${dimensions.variable} ${helvetica.variable} ${sfPro.variable} font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white`}
       >
+        <NoiseOverlay />
+
         <SmoothScroll>
           <TransitionProvider>
             <CustomCursor />
             <PageTransition />
-            <div className="noise-overlay" />
             {children}
           </TransitionProvider>
         </SmoothScroll>
