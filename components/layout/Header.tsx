@@ -7,7 +7,7 @@ import { X } from "lucide-react";
 import { ButtonMenu } from "../ui/ButtonMenu";
 import CreativeBackground from "../ui/CreativeBackground";
 import LogoImg from "@/assets/images/logo.png";
-import { useTransition } from "@/app/context/TransitionContext"; 
+import { useTransition } from "@/app/context/TransitionContext";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,12 +29,12 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 pointer-events-none">
+    <header className="absolute top-0 left-0 w-full z-50 pointer-events-none">
       <div className="w-full mx-auto flex items-center justify-between px-7 py-3">
-        <Link 
-            href="/" 
-            onClick={(e) => handleNavigation(e, '/')}
-            className="relative w-[83px] h-14 pointer-events-auto"
+        <Link
+          href="/"
+          onClick={(e) => handleNavigation(e, '/')}
+          className="relative w-[83px] h-14 pointer-events-auto"
         >
           <Image
             src={LogoImg}
@@ -59,13 +59,14 @@ export function Header() {
 
           {isOpen && (
             <div className="fixed inset-0 z-40 bg-zinc-950 flex flex-col items-center justify-center space-y-4 text-4xl font-bold text-white transition-all duration-500 animate-in fade-in pointer-events-auto">
+              <CreativeBackground />
               <button
                 onClick={() => setIsOpen(false)}
                 className="absolute top-6 right-6 cursor-pointer transition hover:text-gray-400"
               >
                 <X size={30} />
               </button>
-              
+
               <Link
                 href="/"
                 onClick={(e) => handleNavigation(e, '/')}

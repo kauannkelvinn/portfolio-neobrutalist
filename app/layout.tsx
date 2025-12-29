@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${dimensions.variable} ${helvetica.variable} ${sfPro.variable} font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white`}
+        className={`${dimensions.variable} ${helvetica.variable} ${sfPro.variable} font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white p-2 md:p4 h-screen overflow-hidden`}
       >
         <NoiseOverlay />
 
@@ -28,7 +28,9 @@ export default function RootLayout({
           <TransitionProvider>
             <CustomCursor />
             <PageTransition />
-            {children}
+            <main className="relative h-full w-full rounded-3xl md:rounded-4xl overflow-y-auto overflow-x-hidden bg-zinc-950 border-white/5 shadow">
+              {children}
+            </main>
           </TransitionProvider>
         </SmoothScroll>
       </body>
