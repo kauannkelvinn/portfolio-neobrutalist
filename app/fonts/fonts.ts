@@ -1,3 +1,4 @@
+import { Oswald } from "next/font/google"; // Adicione Oswald
 import localFont from 'next/font/local'
 
 export const dimensions = localFont({
@@ -20,3 +21,10 @@ export const sfPro = localFont({
   weight: '400',
   display: 'swap',
 })
+
+export const oswald = Oswald({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-oswald",
+  weight: "variable", // Pega todos os pesos (200 a 700)
+});

@@ -7,9 +7,10 @@
   --color-brand-zinc-950: #09090b;
   --color-brand-gray: #9ca3af;
 
-  --font-display: var(--font-dimensions), sans-serif;
-  --font-heading: var(--font-helvetica), sans-serif;
-  --font-body: var(--font-sf), sans-serif;
+  --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-sf), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-dimensions), monospace;
 }
 
 html.lenis, html.lenis body { height: auto; }
@@ -21,7 +22,7 @@ html.lenis, html.lenis body { height: auto; }
 body {
   background-color: var(--color-brand-black);
   color: var(--color-brand-white);
-  font-family: var(--font-sf), sans-serif; 
+  font-family: var(--font-body);
 }
 
 .background-spotlight {
@@ -33,18 +34,13 @@ body {
     rgb(10, 10, 10);
 }
 
-@layer utilities {
-  .font-display { font-family: var(--font-dimensions), ui-sans-serif, system-ui, sans-serif !important; }
-  .font-heading { font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif !important; }
-  .font-body { font-family: var(--font-sf), ui-sans-serif, system-ui, sans-serif !important; }
-
-  .text-fluid-h1 { font-size: clamp(3.5rem, 10vw + 1rem, 8.5rem); line-height: 0.9; }
-  .text-fluid-h2 { font-size: clamp(2.5rem, 6vw + 1rem, 5rem); line-height: 1; }
-  .text-fluid-body { font-size: clamp(1.25rem, 2vw + 0.5rem, 2rem); }
-}
-
 @media (pointer: fine) {
   body, a, button, input, textarea, .cursor-pointer, .cursor-default {
     cursor: none !important;
   }
+}
+
+@utility text-fluid-h1 {
+  font-size: clamp(3.5rem, 10vw + 1rem, 8.5rem);
+  line-height: 0.9;
 }

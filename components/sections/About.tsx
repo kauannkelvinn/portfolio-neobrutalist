@@ -10,8 +10,8 @@ export function About() {
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
         <FadeIn>
           <h1 className="font-heading text-fluid-h2 font-extrabold leading-[0.8] text-center mb-16 md:mb-24 mix-blend-difference cursor-pointer">
-            <span className="font-body tracking-[7] font-light text-2xl">quem</span><br />
-            <span className="tracking-[-3]">SOU EU?</span>
+            <span className="font-display text-6xl tracking-tighter">QUEM</span><br />
+            <span className="font-display text-6xl tracking-tighter">SOU EU?</span>
           </h1>
         </FadeIn>
 
@@ -20,7 +20,7 @@ export function About() {
           <div className="font-body space-y-6 text-brand-gray">
             <FadeIn delay={0.2}>
               <p>
-                <strong className="text-brand-white block mb-2 font-heading text-xl">O INICIO NO CÓDIGO</strong>
+                <strong className="text-brand-white font-display block mb-2 text-2xl tracking-tighter">O INICIO NO CÓDIGO</strong>
                 Tudo começou com a curiosidade de entender como as coisas funcionavam por trás da tela. Aquele computador bege antigo (que você viu lá em cima) representa minhas primeiras linhas de código, onde o terminal era minha única interface.
               </p>
             </FadeIn>
@@ -39,7 +39,7 @@ export function About() {
               </p>
             </FadeIn>
 
-            <div className="font-heading mt-10 grid grid-cols-2 gap-8">
+            <div className="font-display mt-10 grid grid-cols-2 gap-8">
               <FadeIn delay={0.5}>
                 <div>
                   <h3 className="text-2xl font-extrabold text-brand-white">
@@ -60,15 +60,7 @@ export function About() {
             </div>
           </div>
 
-        </div>
-
-        <FadeIn delay={0.8} direction="up">
-          <div className="mt-32 text-center animate-pulse opacity-50 hidden md:block">
-            <p className="text-[10px] uppercase tracking-[0.5em] text-brand-gray">
-              [ Mova o cursor para ver as memórias ]
-            </p>
-          </div>
-        </FadeIn>
+        </div>    
 
       </div>
     </section>

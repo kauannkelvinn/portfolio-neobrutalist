@@ -1,158 +1,81 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { sendEmail } from '@/actions/send-email'
-import { Github, Linkedin, ArrowUpRight } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { useTransition } from '@/app/context/TransitionContext'
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 
 export default function ContactFooter() {
-  const [pending, setPending] = useState(false)
-  const [message, setMessage] = useState('')
-  
-
-  const { startTransition } = useTransition()
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setPending(true)
-    
-    const formData = new FormData(event.currentTarget)
-    const res = await sendEmail(null, formData)
-    
-    if (res?.success) {
-      setMessage('Mensagem enviada! Entrarei em contato em breve.')
-      ;(event.target as HTMLFormElement).reset()
-    } else {
-      setMessage(res?.message || 'Erro ao enviar. Tente novamente.')
-    }
-    setPending(false)
-  }
-
-  const handleNavigation = async (e: React.MouseEvent, href: string) => {
-    e.preventDefault() 
-    await startTransition(href)
-  }
-
   return (
-    <section id="contact" className="relative w-full bg-black text-white pt-20 flex flex-col justify-between min-h-screen">
-      
-      <div className="container mx-auto px-4 md:px-6 grow flex flex-col justify-center items-center relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="w-full max-w-2xl"
-        >
-          <div className="mb-12 text-center">
-            <h2 className="font-heading text-fluid-body font-black uppercase tracking-tighter mb-4">
-              Vamos <span className="text-red-600">Conversar?</span>
-            </h2>
-            <p className="font-body text-zinc-400 text-lg">
-              Tem um projeto em mente ou quer apenas trocar uma ideia?
-            </p>
-          </div>
+    <section id="contact" className="relative w-full min-h-[90vh] bg-brand-black text-brand-white flex flex-col items-center justify-between px-4 py-20 overflow-hidden border-t border-white/10">
 
-          <div className="bg-zinc-900/50 border border-zinc-800 p-8 md:p-10 rounded-xl backdrop-blur-sm relative overflow-hidden group">
-            <div className="absolute inset-0 border border-red-600/0 group-hover:border-red-600/30 transition-colors duration-500 rounded-xl pointer-events-none" />
+      <div className="grow flex flex-col items-center justify-center w-full z-10">
 
-            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Nome</label>
-                  <input 
-                    name="name" 
-                    required 
-                    type="text" 
-                    className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
-                    placeholder="Seu nome"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Email</label>
-                  <input 
-                    name="email" 
-                    required 
-                    type="email" 
-                    className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all placeholder:text-zinc-600"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-              </div>
+        <div className="w-full text-center group cursor-default">
+          <motion.h2
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="font-display font-black text-[15vw] uppercase leading-[0.8] tracking-tighter mix-blend-difference text-center"
+          >
+            VAMOS <br />
+            <span className="text-transparent stroke-white group-hover:text-brand-red group-hover:stroke-none transition-all duration-500 ease-in-out">
+              CONVERSAR?
+            </span>
+          </motion.h2>
+        </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold font-heading uppercase tracking-wider text-red-500">Mensagem</label>
-                <textarea 
-                  name="message" 
-                  required 
-                  rows={4}
-                  className="w-full text-base md:text-sm bg-black/50 border border-zinc-700 focus:border-red-500 text-white p-3 rounded-md outline-none transition-all resize-none placeholder:text-zinc-600"
-                  placeholder="Conte-me sobre seu projeto..."
-                />
-              </div>
+        <div className="mt-16 flex flex-col items-center gap-6">
+          <p className="font-body text-zinc-500 text-center max-w-md text-sm md:text-lg uppercase tracking-widest">
+            Projetos, Collabs ou apenas um &quot;Oi&quot;
+          </p>
+          <Link
+            href="mailto:seu@email.com"
+            // 👇 MUDANÇAS NO DESIGN:
+            // bg-white/5 + backdrop-blur-md: Cria o efeito de vidro fosco.
+            // border-white/10: Borda sutil e elegante.
+            // hover:bg-brand-red: Acende em vermelho no hover.
+            // hover:shadow-[...]: Adiciona um brilho neon vermelho ao redor.
+            className="group relative inline-flex items-center gap-3 px-12 py-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full font-display text-xl uppercase tracking-widest text-white transition-all duration-500 hover:bg-brand-red hover:border-brand-red hover:scale-105 hover:shadow-[0_0_30px_rgba(247,29,29,0.5)]"
+          >
+            {/* Ícone com animação leve */}
+            <Mail size={20} className="text-zinc-400 group-hover:text-white transition-colors" />
 
-              <button 
-                disabled={pending}
-                type="submit" 
-                className="font-heading w-full bg-white text-black font-black uppercase tracking-widest py-4 hover:bg-red-600 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-              >
-                {pending ? 'Enviando...' : 'Enviar Mensagem'}
-                {!pending && <ArrowUpRight size={20} />}
-              </button>
+            <span>Enviar Email</span>
 
-              {message && (
-                <p className="text-center text-sm font-medium mt-4 text-zinc-300 animate-pulse">
-                  {message}
-                </p>
-              )}
-            </form>
-          </div>
-        </motion.div>
+            <ArrowUpRight className="w-5 h-5 text-zinc-400 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white" />
+          </Link>
+        </div>
       </div>
 
-      <footer className="w-full bg-[#7f1d1d] text-black mt-24 py-12 border-t-4 border-black relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
-            
-            <div className="space-y-4">
-               {['Home', 'About', 'Work', 'Statistics', 'Contact'].map((item) => {
-                 const href = item === 'Home' ? '/' : `/#${item.toLowerCase()}`
-                 
-                 return (
-                   <a 
-                     key={item} 
-                     href={href} 
-                     onClick={(e) => handleNavigation(e, href)}
-                     className="block text-2xl md:text-4xl font-black font-heading uppercase tracking-tighter hover:text-white transition-colors cursor-pointer border-b-2 border-black/20 hover:border-white w-max"
-                   >
-                     {item}
-                   </a>
-                 )
-               })}
-            </div>
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 mt-20 font-mono text-[10px] md:text-xs text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-8 items-end">
 
-            <div className="flex flex-col gap-6 md:items-end">
-              <div className="flex gap-4">
-                <a href="https://www.linkedin.com/in/kauannkelvinn" target='_blank' className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110 cursor-pointer">
-                  <Linkedin size={24} />
-                </a>
-                <a href="https://www.github.com/kauannkelvinn" target='_blank' className="p-3 bg-black text-white rounded-full hover:bg-white hover:text-black transition-all hover:scale-110 cursor-pointer">
-                  <Github size={24} />
-                </a>
-              </div>
-              
-              <div className="font-heading flex flex-col md:items-end font-bold uppercase tracking-widest text-sm opacity-80">
-                <span>Developed by Kauan Kelvin</span>
-                <span>All Rights Reserved</span>
-                <span className="mt-2 text-white">Brazil 2025</span>
-              </div>
-            </div>
-          </div>
-          
-          <div className="w-full h-1 bg-black/20 mt-12 mb-2" />
+        <div className="flex gap-6 justify-center md:justify-start">
+          <a
+            href="https://www.linkedin.com/in/kauannkelvinn"
+            target='_blank'
+            className="flex items-center gap-2 hover:text-brand-white transition-colors"
+          >
+            <Linkedin size={14} /> LINKEDIN
+          </a>
+          <a
+            href="https://www.github.com/kauannkelvinn"
+            target='_blank'
+            className="flex items-center gap-2 hover:text-brand-white transition-colors"
+          >
+            <Github size={14} /> GITHUB
+          </a>
         </div>
-      </footer>
+
+        <div className="text-center">
+          <span>FORTALEZA, CEARÁ — BRASIL</span>
+        </div>
+
+        <div className="text-center md:text-right flex flex-col gap-1">
+          <span>DESIGN & CODE BY KAUAN KELVIN</span>
+          <span>©2025 — ALL RIGHTS RESERVED</span>
+        </div>
+      </div>
+
     </section>
-  )
+  );
 }
