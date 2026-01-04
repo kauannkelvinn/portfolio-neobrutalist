@@ -9,8 +9,8 @@ export function About() {
 
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
         <FadeIn>
-          <h1 className="font-display font-extrabold leading-[10] text-center mb-16 mt-20 md:mb-24 mix-blend-difference cursor-pointer">
-            <span className=" text-6xl md:text-[14rem]  inline-block scale-y-[2] tracking-tight">QUEM SOU EU ?</span>
+          <h1 className="font-display font-extrabold leading-[10] text-center md:mt-20 md:mb-24 mix-blend-difference cursor-pointer">
+            <span className=" text-5xl md:text-[14rem]  inline-block scale-y-[2] tracking-tight">QUEM SOU EU ?</span>
           </h1>
         </FadeIn>
 
@@ -41,7 +41,7 @@ export function About() {
             <div className="font-display mt-10 grid grid-cols-2 gap-8">
               <FadeIn delay={0.5}>
                 <div>
-                  <h3 className="text-8xl font-extrabold text-brand-white">
+                  <h3 className="text-5xl md:text-8xl font-extrabold text-brand-white">
                     <Counter value={2} suffix="+" />
                   </h3>
                   <span className="font-body text-xs text-brand-gray uppercase tracking-widest">Anos de XP</span>
@@ -50,7 +50,7 @@ export function About() {
 
               <FadeIn delay={0.6}>
                 <div>
-                  <h3 className="text-8xl font-extrabold text-brand-white">
+                  <h3 className="text-5xl md:text-8xl font-extrabold text-brand-white">
                     <Counter value={10} suffix="+" />
                   </h3>
                   <span className="text-xs font-body text-brand-gray uppercase tracking-widest">Projetos</span>

@@ -7,11 +7,10 @@ export function AboutModern() {
     <section className="bg-black text-brand-white relative z-20">
       <div className=" min-h-screen flex flex-col items-center justify-center py-[13rem] px-6 relative z-10">
         <FadeIn>
-          <h2 className="font-display font-extrabold text-6xl md:text-[10rem] tracking-[-1.50]
-           leading-[0.90] mb-30 scale-y-[2] text-brand-red">
+          <h2 className="font-display font-extrabold text-6xl md:text-[10rem] tracking-[-1.50] md:leading-[0.90] mb-30 scale-y-[2] text-brand-red">
             ENGENHARIA <br />
             <span className="font-mono scale-y-50 tracking-widest
-             flex justify-center font-light text-[2rem] text-white leading-[2] transition-colors duration-300">
+             flex justify-center font-light text-[2rem] text-white md:leading-[2] transition-colors duration-300">
               & CÓDIGO
             </span>
 

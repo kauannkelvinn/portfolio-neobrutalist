@@ -16,7 +16,7 @@ export default function ContactFooter() {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="font-display inline-block scale-x-[0.99] scale-y font-black text-[14vw] uppercase leading-none mix-blend-difference text-center"
+            className="font-display inline-block scale-x-[0.99] scale-y font-black text-[17vw] md:text-[14vw] uppercase leading-none mix-blend-difference text-center"
           >
             VAMOS <br />
             <span className="stroke-white">CONVERSAR?</span>
@@ -27,20 +27,19 @@ export default function ContactFooter() {
           <LiquidSpotlightButton href="mailto:kauankelvinfullstack@gmail.com">
             <Mail size={20} />
             <span>Enviar Email</span>
-            <ArrowUpRight size={20} />
           </LiquidSpotlightButton>
         </div>
       </div>
 
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 mt-20 border-t border-white/5 pt-8 items-end">
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <div className="scale-75 px-0 py-0 origin-left flex gap-4">
+          <div className="scale-100 px-0 py-0 origin-left flex gap-4">
             <LiquidSpotlightButton href="https://www.linkedin.com/in/kauannkelvinn">
-              <Linkedin size={18} /> 
+              <Linkedin size={13} /> 
             </LiquidSpotlightButton>
 
             <LiquidSpotlightButton href="https://www.github.com/kauannkelvinn">
-              <Github size={18} />
+              <Github size={13} />
             </LiquidSpotlightButton>
           </div>
         </div>

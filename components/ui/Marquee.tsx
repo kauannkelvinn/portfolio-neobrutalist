@@ -17,7 +17,7 @@ export function Marquee() {
                 {Array.from({ length: 12 }).map((_, i) => (
                     <span
                         key={i}
-                        className="font-display font-light text-[5rem]  inline-block scale-x-[] uppercase text-brand-black mr-12 leading-none select-none"
+                        className="font-display font-light text-[4rem] md:text-[5rem]  inline-block uppercase text-brand-black mr-12 leading-none select-none"
                         style={{
                             WebkitTextStroke: "2px white",
                             color: "transparent"

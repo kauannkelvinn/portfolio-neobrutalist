@@ -74,7 +74,7 @@ export function Header() {
               <Link
                 href="/"
                 onClick={(e) => handleNavigation(e, '/')}
-                className="text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
+                className="text-5xl md:text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
               >
                 HOME
               </Link>
@@ -82,7 +82,7 @@ export function Header() {
               <Link
                 href="/#about"
                 onClick={(e) => handleNavigation(e, '/#about')}
-                className="text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
+                className="text-5xl md:text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
               >
                 ABOUT
               </Link>
@@ -90,7 +90,7 @@ export function Header() {
               <Link
                 href="/#work"
                 onClick={(e) => handleNavigation(e, '/#work')}
-                className="text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
+                className="text-5xl md:text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
               >
                 WORK
               </Link>
@@ -98,7 +98,7 @@ export function Header() {
               <Link
                 href="/#statistics"
                 onClick={(e) => handleNavigation(e, '/#statistics')}
-                className="text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
+                className="text-5xl md:text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
               >
                 STATISTICS
               </Link>
@@ -106,7 +106,7 @@ export function Header() {
               <Link
                 href="/#contact"
                 onClick={(e) => handleNavigation(e, '/#contact')}
-                className="text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
+                className="text-5xl md:text-6xl font-display font-extrabold transition-all duration-100 ease-in-out hover:text-gray-400 cursor-pointer z-10"
               >
                 CONTACT
               </Link>
