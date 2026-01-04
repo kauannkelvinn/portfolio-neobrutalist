@@ -13,7 +13,6 @@ import { Companies } from "@/components/sections/Companies";
 import { Skills } from "@/components/sections/Skills";
 import ContactFooter from "@/components/sections/ContactFooter";
 
-// Carregamento dinâmico dos 3D
 const Scene = dynamic(() => import("@/components/3d/Scene"), {
   ssr: false,
   loading: () => (
@@ -39,12 +38,9 @@ export default function Home() {
       
       <Header />
 
-      {/* --- SEÇÃO 1: HERO --- */}
       <section className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-red-900 px-6 text-white">
         
-        {/* MOBILE: Imagem Centralizada (Comportamento de Objeto 3D) */}
         <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center pointer-events-none">
-           {/* DICA: Use um PNG com fundo transparente do seu objeto 3D aqui */}
            <Image 
              src="/images/hero-mobile.png" 
              alt="Hero Object" 
@@ -55,14 +51,12 @@ export default function Home() {
            />
         </div>
 
-        {/* DESKTOP: Cena 3D */}
         <div id="home" className="absolute inset-0 z-10 hidden md:block">
            <LazyLoad>
             <Scene />
           </LazyLoad>
         </div>
 
-        {/* Textos */}
         <div className="absolute z-20 pointer-events-none w-full px-6 top-24 flex justify-between items-start md:top-6 md:right-50 md:w-auto md:px-0 md:justify-start md:gap-20">
           <div className="font-body p-0 md:p-4 text-[10px] md:text-xs font-light tracking-wider uppercase flex flex-col">
             <p className="text-left">UXUI DESIGNER</p>
@@ -77,10 +71,8 @@ export default function Home() {
 
       <About />
 
-      {/* --- SEÇÃO 2: MACBOOK --- */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
         
-        {/* MOBILE: Macbook Centralizado */}
         <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center pointer-events-none">
            <Image 
              src="/images/macbook-mobile.png" 
@@ -91,7 +83,6 @@ export default function Home() {
            />
         </div>
 
-        {/* DESKTOP: 3D Interativo */}
         <div className="absolute inset-0 w-full h-full hidden md:block">
           <LazyLoad>
             <SceneMacbook />
@@ -101,10 +92,8 @@ export default function Home() {
 
       <AboutModern />
 
-      {/* --- SEÇÃO 3: CYBER --- */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
         
-        {/* MOBILE: Cyber Setup Centralizado */}
         <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center pointer-events-none">
            <Image 
              src="/images/cyber-mobile.png" 
@@ -115,7 +104,6 @@ export default function Home() {
            />
         </div>
 
-        {/* DESKTOP: 3D Cyber */}
         <div className="absolute inset-0 w-full h-full hidden md:block">
           <LazyLoad>
             <SceneCyber />

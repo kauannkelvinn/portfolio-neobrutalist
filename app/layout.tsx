@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className="font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white p-2 md:p-4 h-screen overflow-hidden"
+        className="font-body antialiased bg-brand-black text-brand-white selection:bg-brand-red selection:text-white md:p-4 md:h-screen md:overflow-hidden"
       >
         <NoiseOverlay />
 
@@ -27,7 +27,7 @@ export default function RootLayout({
           <TransitionProvider>
             <CustomCursor />
             <PageTransition />
-            <main className="relative h-full w-full rounded-3xl md:rounded-4xl overflow-y-auto overflow-x-hidden bg-zinc-950 border border-white/5 shadow-2xl">
+            <main className="relative w-full bg-zinc-950 min-h-screen md:h-full md:rounded-4xl md:overflow-y-auto md:overflow-x-hidden md:border md:border-white/5 md:shadow-2xl">
               {children}
             </main>
           </TransitionProvider>
