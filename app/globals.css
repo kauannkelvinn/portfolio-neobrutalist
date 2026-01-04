@@ -1,46 +1,86 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Tusker';
+  src: url('/fonts/Tusker.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Editorial';
+  src: url('/fonts/Editorial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montreal';
+  src: url('/fonts/Montreal-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montreal';
+  src: url('/fonts/Montreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-brand-red: #f71d1d;
   --color-brand-black: #0a0a0a;
   --color-brand-white: #e5e5e5;
   --color-brand-zinc-950: #09090b;
   --color-brand-gray: #9ca3af;
+  
+  --font-display: "Tusker", sans-serif;
+  --font-accent: "Editorial", serif;
+  --font-body: "Montreal", sans-serif;
+  --font-mono: "Courier New", monospace;
 
-  --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-sf), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-dimensions), monospace;
+  --animate-border-spin: border-spin 4s linear infinite;
+  
+  @keyframes border-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 }
 
-html.lenis, html.lenis body { height: auto; }
-.lenis.lenis-smooth { scroll-behavior: auto !important; }
-.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-.lenis.lenis-stopped { overflow: hidden; }
-.lenis.lenis-scrolling iframe { pointer-events: none; }
+:root {
+  font-family: "Montreal", sans-serif;
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-white);
+}
 
 body {
   background-color: var(--color-brand-black);
   color: var(--color-brand-white);
-  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
 .background-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   background: radial-gradient(
       100rem circle at var(--x, 50%) var(--y, 50%),
-      rgba(247, 29, 29, 0.08),
+      rgba(255, 0, 0, 0.04),
       transparent 80%
     ),
     rgb(10, 10, 10);
 }
 
 @media (pointer: fine) {
-  body, a, button, input, textarea, .cursor-pointer, .cursor-default {
-    cursor: none !important;
-  }
-}
-
-@utility text-fluid-h1 {
-  font-size: clamp(3.5rem, 10vw + 1rem, 8.5rem);
-  line-height: 0.9;
+  body, a, button, input, textarea { cursor: none !important; }
 }

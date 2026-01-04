@@ -9,18 +9,17 @@ export function About() {
 
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
         <FadeIn>
-          <h1 className="font-heading text-fluid-h2 font-extrabold leading-[0.8] text-center mb-16 md:mb-24 mix-blend-difference cursor-pointer">
-            <span className="font-display text-6xl tracking-tighter">QUEM</span><br />
-            <span className="font-display text-6xl tracking-tighter">SOU EU?</span>
+          <h1 className="font-display font-extrabold leading-[10] text-center mb-16 mt-20 md:mb-24 mix-blend-difference cursor-pointer">
+            <span className=" text-6xl md:text-[14rem]  inline-block scale-y-[2] tracking-tight">QUEM SOU EU ?</span>
           </h1>
         </FadeIn>
 
-        <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 font-mono text-sm md:text-base border-t border-brand-white/10 pt-12">
+        <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 text-sm md:text-base border-t border-brand-white/10 pt-12">
 
-          <div className="font-body space-y-6 text-brand-gray">
+          <div className=" space-y-6 text-brand-gray">
             <FadeIn delay={0.2}>
-              <p>
-                <strong className="text-brand-white font-display block mb-2 text-2xl tracking-tighter">O INICIO NO CÓDIGO</strong>
+              <p className="">
+                <strong className="text-brand-white font-accent block mb-2 tracking-tighter">O INICIO NO CÓDIGO</strong>
                 Tudo começou com a curiosidade de entender como as coisas funcionavam por trás da tela. Aquele computador bege antigo (que você viu lá em cima) representa minhas primeiras linhas de código, onde o terminal era minha única interface.
               </p>
             </FadeIn>
@@ -42,19 +41,19 @@ export function About() {
             <div className="font-display mt-10 grid grid-cols-2 gap-8">
               <FadeIn delay={0.5}>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-brand-white">
+                  <h3 className="text-8xl font-extrabold text-brand-white">
                     <Counter value={2} suffix="+" />
                   </h3>
-                  <span className="text-xs text-brand-gray uppercase tracking-widest">Anos de XP</span>
+                  <span className="font-body text-xs text-brand-gray uppercase tracking-widest">Anos de XP</span>
                 </div>
               </FadeIn>
 
               <FadeIn delay={0.6}>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-brand-white">
+                  <h3 className="text-8xl font-extrabold text-brand-white">
                     <Counter value={10} suffix="+" />
                   </h3>
-                  <span className="text-xs text-brand-gray uppercase tracking-widest">Projetos</span>
+                  <span className="text-xs font-body text-brand-gray uppercase tracking-widest">Projetos</span>
                 </div>
               </FadeIn>
             </div>
