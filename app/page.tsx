@@ -11,7 +11,6 @@ import { Process } from "@/components/sections/Process";
 import { Companies } from "@/components/sections/Companies";
 import { Skills } from "@/components/sections/Skills";
 import ContactFooter from "@/components/sections/ContactFooter";
-import TestFont from '@/components/sections/TestFont';
 
 const Scene = dynamic(() => import("@/components/3d/Scene"), {
   ssr: false,
