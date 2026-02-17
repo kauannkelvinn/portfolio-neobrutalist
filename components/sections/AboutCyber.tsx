@@ -8,7 +8,7 @@ export function AboutCyber() {
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
 
         <FadeIn>
-            <h2 className="font-mono uppercase font-light text-2xl md:text-4xl tracking-[10] leading-[2] text-center mb-16 mix-blend-difference hover:text-green-500 transition-colors duration-300">
+            <h2 className="font-mono uppercase font-light text-2xl md:text-4xl tracking-[10] leading-loose text-center mb-16 mix-blend-difference duration-300">
             segurança <span className="text-brand-gray/50">&</span>  <br />
             <span className="inline-block scale-y-[2] scale-x-[1.50] text-[11rem] font-display tracking-[0.80] text-green-">ROBUSTEZ</span>
             </h2>

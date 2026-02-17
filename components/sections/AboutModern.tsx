@@ -4,11 +4,11 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export function AboutModern() {
   return (
-    <section className="bg-black text-brand-white relative z-20">
-      <div className=" min-h-screen flex flex-col items-center justify-center py-[13rem] px-6 relative z-10">
+    <section className="bg-red-900 text-brand-white relative z-20">
+      <div className=" min-h-screen flex flex-col items-center justify-center py-52 px-6 relative z-10">
         <FadeIn>
           <h2 className="font-display font-extrabold text-6xl md:text-[10rem] tracking-[-1.50]
-           leading-[0.90] mb-30 scale-y-[2] text-brand-red">
+           leading-[0.90] mb-30 scale-y-[2] text-brand-white">
             ENGENHARIA <br />
             <span className="font-mono scale-y-50 tracking-widest
              flex justify-center font-light text-[2rem] text-white leading-loose transition-colors duration-300">
@@ -72,12 +72,6 @@ export function AboutModern() {
             </FadeIn>
           </div>
         </div>
-
-        <FadeIn delay={0.9} direction="down">
-            <div className="mt-32 text-center opacity-50">
-            <div className="w-px h-20 bg-linear-to-b from-transparent via-brand-red to-transparent mx-auto"></div>
-            </div>
-        </FadeIn>
 
       </div>
     </section>
