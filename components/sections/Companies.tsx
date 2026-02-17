@@ -53,7 +53,7 @@ export function Companies() {
                 <div 
                   className="bg-zinc-900 border-4 border-zinc-800 p-8 md:p-12 hover:border-brand-red hover:-translate-y-2 transition-all duration-300 group h-full"
                 >
-                  <h3 className="font-heading text-6xl md:text-7xl font-bold text-white mb-4 group-hover:text-brand-red transition-colors flex items-center">
+                  <h3 className="font-display text-6xl md:text-[7rem] font-bold text-white mb-4 group-hover:text-brand-red transition-colors flex items-center">
                     <Counter value={numericValue} suffix={suffix} />
                   </h3>
                   

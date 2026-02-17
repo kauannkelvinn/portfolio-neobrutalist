@@ -39,17 +39,17 @@ export default function Home() {
 
       <section className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-red-900 px-6 text-white">
         <div id="home" className="absolute inset-0 z-10">
-          <LazyLoad>
+           <LazyLoad>
             <Scene />
           </LazyLoad>
         </div>
 
-        <div className="absolute z-10 pointer-events-none w-full px-6 top-24 flex justify-between items-start md:top-4 md:right-50 md:w-auto md:px-0 md:justify-start md:gap-20">
-          <div className="p-0 md:p-4 text-[10px] md:text-xs font-light tracking-wider uppercase flex flex-col">
+        <div className="absolute z-10 pointer-events-none w-full px-6 top-24 flex justify-between items-start md:top-6 md:right-50 md:w-auto md:px-0 md:justify-start md:gap-20">
+          <div className="font-body p-0 md:p-4 text-[10px] md:text-xs font-light tracking-wider uppercase flex flex-col">
             <p className="text-left">UXUI DESIGNER</p>
             <p className="text-left">SOFTWARE ENGINEER</p>
           </div>
-          <div className="p-0 md:p-4 text-[10px] md:text-xs font-light tracking-wider uppercase flex flex-col text-right md:text-left">
+          <div className="font-body p-0 md:p-4 text-[10px] md:text-xs font-light tracking-wider uppercase flex flex-col text-right md:text-left">
             <p>DONE</p>
             <p>IS BETTER THAN PERFECT.</p>
           </div>
@@ -63,13 +63,12 @@ export default function Home() {
           <SceneMacbook />
         </LazyLoad>
       </section>
-
       <AboutModern />
 
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-red-900">
         <LazyLoad>
           <SceneCyber />
-        </LazyLoad>
+        </LazyLoad> 
       </section>
 
       <AboutCyber />
