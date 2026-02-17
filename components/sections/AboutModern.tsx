@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn"
 
 export function AboutModern() {
   return (
-    <section className="bg-brand-black text-brand-white relative z-20">
+    <section className="bg-red-900 text-brand-white relative z-20">
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
 
         <FadeIn>
@@ -63,11 +63,6 @@ export function AboutModern() {
 
         </div>
 
-        <FadeIn delay={0.9} direction="down">
-            <div className="mt-32 text-center opacity-50">
-            <div className="w-px h-20 bg-linear-to-b from-transparent via-brand-red to-transparent mx-auto"></div>
-            </div>
-        </FadeIn>
 
       </div>
     </section>

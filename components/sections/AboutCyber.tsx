@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn"
 
 export function AboutCyber() {
   return (
-    <section className="bg-brand-black text-brand-white relative z-20 overflow-hidden">
+    <section className="bg-red-900 text-brand-white relative z-20 overflow-hidden">
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
 
         <FadeIn>
@@ -64,10 +64,6 @@ export function AboutCyber() {
             </FadeIn>
           </div>
 
-        </div>
-
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
-          style={{ backgroundImage: 'linear-gradient(0deg, transparent 24%, #00ff00 25%, #00ff00 26%, transparent 27%, transparent 74%, #00ff00 75%, #00ff00 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, #00ff00 25%, #00ff00 26%, transparent 27%, transparent 74%, #00ff00 75%, #00ff00 76%, transparent 77%, transparent)', backgroundSize: '50px 50px' }}>
         </div>
 
       </div>

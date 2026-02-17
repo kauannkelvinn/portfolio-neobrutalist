@@ -5,7 +5,7 @@ import Counter from "../ui/Counter";
 
 export function About() {
   return (
-    <section id="about" className="bg-brand-black text-brand-white relative z-20">
+    <section id="about" className="bg-red-900 text-brand-white relative z-20">
 
       <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6 relative z-10">
         <FadeIn>
