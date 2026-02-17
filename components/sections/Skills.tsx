@@ -12,8 +12,8 @@ export function Skills() {
           
           <div className="flex-1">
             <FadeIn>
-                <h2 className="font-heading font-extrabold text-fluid-body mb-16 uppercase">
-                Arsenal <br /> <span className="text-brand-red">Técnico</span>
+                <h2 className="font-body font-extrabold text-5xl mb-16 uppercase">
+                Arsenal <br />Técnico
                 </h2>
             </FadeIn>
             <div className="grid grid-cols-2 gap-x-12 gap-y-16">
@@ -21,7 +21,7 @@ export function Skills() {
                  <FadeIn key={category.title} delay={index * 0.1}>
                    <div>
                      <h3 className="font-heading text-brand-red mb-6 uppercase tracking-[3] text-sm border-b border-brand-red/20 pb-2 inline-block">{category.title}</h3>
-                     <ul className="font-body space-y-3 font-bold tracking-tight text-2xl md:text-3xl uppercase">
+                     <ul className="font-mono space-y-3 font-bold tracking-widest text-2xl md:text-2xl uppercase">
                         {category.skills.map(skill => <li key={skill} className="hover:text-brand-red transition-colors cursor-pointer">{skill}</li>)}
                      </ul>
                    </div>
@@ -33,8 +33,8 @@ export function Skills() {
           <div className="flex-1">
             <FadeIn delay={0.2}>
                 <div className="flex items-end justify-between mb-12 border-b border-white/20 pb-4">
-                  <h3 className="font-heading font-extrabold tracking-wide text-4xl uppercase">Certificados</h3>
-                  <span className="font-body text-xs text-brand-red animate-pulse">SYNCING DATA...</span>
+                  <h3 className="font-body font-bold tracking-wide text-3xl uppercase">Certificados</h3>
+                  <span className="font-body uppercase text-xs text-brand-red animate-pulse">syncing data...</span>
                 </div>
             </FadeIn>
 
@@ -87,9 +87,9 @@ export function Skills() {
 
                       <div className="absolute top-2 right-2 z-30">
                           {cert.status === 'locked' ? (
-                            <span className="text-[10px] font-mono bg-black/90 px-2 py-1 text-zinc-600 border border-zinc-800">LOCKED</span>
+                            <span className="text-[10px] font-body bg-black/90 px-2 py-1 text-zinc-600 border border-zinc-800">LOCKED</span>
                           ) : (
-                            <span className="text-[10px] font-mono bg-brand-red px-2 py-1 text-black font-bold">VERIFIED</span>
+                            <span className="text-[10px] font-body  bg-black/90 px-2 py-1 text-zinc font-bold">VERIFIED</span>
                           )}
                       </div>
                       

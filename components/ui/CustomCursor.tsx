@@ -29,13 +29,13 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-brand-white rounded-full pointer-events-none z-9999 mix-blend-difference"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-brand-white rounded-full pointer-events-none z-99999 mix-blend-difference"
         animate={{ x: x - 5, y: y - 5 }}
         transition={{ type: 'tween', ease: 'linear', duration: 0 }}
       />
 
       <motion.div
-        className="fixed top-0 left-0 border border-brand-white rounded-full pointer-events-none z-9998 mix-blend-difference"
+        className="fixed top-0 left-0 border border-brand-white rounded-full pointer-events-none z-99998 mix-blend-difference"
         animate={{
           x: x - (isHovering ? 32 : 10),
           y: y - (isHovering ? 32 : 10),

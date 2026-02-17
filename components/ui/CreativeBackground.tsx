@@ -6,6 +6,9 @@ export default function CreativeBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouchDevice) return;
+
     const handleMouseMove = (event: MouseEvent) => {
       if (containerRef.current) {
         const { clientX, clientY } = event;
@@ -23,7 +26,7 @@ export default function CreativeBackground() {
 
   return (
     <>
-      <svg className="absolute h-0 w-0">
+      <svg className="fixed top-0 left-0 h-0 w-0 pointer-events-none z-[-1]">
         <defs>
           <filter id="noiseFilter">
             <feTurbulence
@@ -38,7 +41,7 @@ export default function CreativeBackground() {
 
       <div
         ref={containerRef}
-        className="background-spotlight"
+        className="background-spotlight fixed inset-0 z-[-1] w-full h-dvh pointer-events-none"
       />
     </>
   );
