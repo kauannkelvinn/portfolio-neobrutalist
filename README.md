@@ -10,8 +10,6 @@
 
   <br />
 
-  ![Project Preview](./public/preview-hero.png)
-
   <p align="center">
     Um portfólio imersivo focado em <strong>Performance Extrema</strong> e <strong>Design Neo-Brutalista</strong>.<br />
     Combinando renderização 3D interativa com as melhores práticas de Core Web Vitals.
