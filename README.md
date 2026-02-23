@@ -83,5 +83,5 @@ Além do design, o foco técnico foi a **Performance**. Sites com 3D costumam se
 ---
 
 <div align="center">
-  Desenvolvido por <a href="https://github.com/kauannkelvinn">Kauan Kelvinn</a>
+  Desenvolvido por <a href="https://github.com/kauannkelvinn">Kauan Kelvin</a>
 </div>
